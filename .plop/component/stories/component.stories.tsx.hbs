@@ -1,0 +1,17 @@
+import { ComponentStory, ComponentMeta } from '@storybook/react-native';
+
+import { {{ name }} } from '@motionhungry-ui/components';
+
+const {{ name }}Meta: ComponentMeta<typeof {{ name }}> = {
+  title: '{{ name }}',
+  component: {{ name }},
+  args: {
+    someProp: {{ name }},
+  },
+};
+
+export default {{ name }}Meta;
+
+type {{ name }}Story = ComponentStory<typeof {{ name }}>;
+
+export const Default: {{ name }}Story = (args) => <{{ name }} {...args} />;

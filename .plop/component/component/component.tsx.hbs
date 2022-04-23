@@ -1,0 +1,20 @@
+import { Box, Text } from '@motionhungry-ui/core';
+import { useTheme } from '@motionhungry-ui/hooks';
+import { MarginProps } from 'styled-system';
+
+type {{ name }}Props = {
+  someProp: string;
+} & MarginProps;
+
+const {{ name }} = ({ someProp, ...props }: {{ name }}Props): JSX.Element => {
+  const theme = useTheme();
+  return (
+    <Box backgroundColor={theme.colors.primary[100]} {...props}>
+      <Text>{someProp}</Text>
+    </Box>
+  );
+};
+
+{{ name }}.displayName = '{{ name }}';
+
+export { {{ name }} };
