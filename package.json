@@ -1,0 +1,32 @@
+{
+  "license": "MPL 2.0",
+  "name": "motionhungry-ui",
+  "version": "0.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "plop": "plop",
+    "prepare": "husky install",
+    "sb:android": "turbo run sb:android --scope=@motionhungry-ui/storybook",
+    "sb:ios": "turbo run sb:ios --scope=@motionhungry-ui/storybook",
+    "sb:web": "turbo run sb:web --scope=@motionhungry-ui/storybook",
+    "sb:prestart": "yarn --cwd ./apps/storybook sb:watch",
+    "sb:watch": "yarn --cwd ./apps/storybook sb:watch"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^16.2.3",
+    "@commitlint/config-conventional": "^16.2.1",
+    "husky": "^7.0.4",
+    "plop": "^3.0.5",
+    "prettier": "^2.5.1",
+    "turbo": "latest"
+  },
+  "engines": {
+    "npm": ">=7.0.0",
+    "node": ">=14.0.0"
+  },
+  "packageManager": "yarn@1.22.17"
+}

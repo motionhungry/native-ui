@@ -1,0 +1,38 @@
+import { Color, Theme } from '../types';
+import { baseTheme } from './base';
+
+const colors: Record<string, Color> = {
+  black: {
+    100: '#000',
+    75: '#000',
+    50: '#000',
+    25: '#000',
+  },
+  white: {
+    100: '#fff',
+    75: '#fff',
+    50: '#fff',
+    25: '#fff',
+  }
+};
+
+colors.primary = colors.black;
+colors.secondary = colors.white;
+
+export { colors };
+
+export const {{ name }}: Theme = {
+  ...baseTheme,
+  backgroundColor: colors.white[100],
+  colors,
+  components: {
+    Button: {
+      primary: {
+        backgroundColor: colors.primary,
+      },
+      secondary: {
+        backgroundColor: colors.secondary,
+      }
+    },
+  },
+};

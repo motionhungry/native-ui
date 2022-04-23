@@ -1,0 +1,15 @@
+{
+  "baseBranch": "origin/master",
+  "schema": "https://turborepo.org/schema.json",
+  "pipeline": {
+    "sb:ios": {
+      "cache": false
+    },
+    "sb:android": {
+      "cache": false
+    },
+    "sb:web": {
+      "cache": false
+    }
+  }
+}
