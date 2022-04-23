@@ -39,20 +39,46 @@ export const button: Button = {
     small: 32,
   },
   primary: {
-    borderRadius: radius.medium,
+    borderRadius: radius.small,
     borderWidth: 0,
     disabledOpacity: 50,
     labelColor: color.white,
   },
   secondary: {
-    borderRadius: radius.medium,
+    borderRadius: radius.small,
     borderWidth: 2,
     disabledOpacity: 50,
   },
   tertiary: {
-    borderRadius: radius.medium,
+    borderRadius: radius.small,
     borderWidth: 0,
     disabledOpacity: 50,
   },
   typeVariant: typography.buttonText,
+};
+
+type BaseIconButton = {
+  height: Record<ButtonSize, number>;
+  iconSize: Record<ButtonSize, number>;
+  width: Record<ButtonSize, number>;
+};
+
+export interface IconButton
+  extends BaseIconButton,
+    Record<ButtonVariant, ButtonVariantSetting> {
+  primary: ButtonVariantSetting;
+  secondary: ButtonVariantSetting;
+  tertiary: ButtonVariantSetting;
+}
+
+export const iconButton: IconButton = {
+  height: { ...button.height },
+  iconSize: {
+    default: 32,
+    small: 24,
+  },
+  primary: { ...button.primary },
+  secondary: { ...button.secondary },
+  tertiary: { ...button.tertiary },
+  width: { ...button.height },
 };

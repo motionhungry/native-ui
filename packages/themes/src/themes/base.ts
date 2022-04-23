@@ -9,7 +9,7 @@ import {
   Typography,
 } from '../base';
 
-import { button, Button } from '../components';
+import { button, Button, iconButton, IconButton } from '../components';
 
 export type Theme = {
   backgroundColor: string;
@@ -19,6 +19,7 @@ export type Theme = {
   typography: Typography;
   components: {
     Button: Button;
+    IconButton: IconButton;
   };
 };
 
@@ -30,5 +31,6 @@ export const baseTheme: Theme = {
   typography,
   components: {
     Button: button,
+    IconButton: iconButton,
   },
 };

@@ -28,7 +28,10 @@ if (parameters) {
 argsEnhancers.forEach((enhancer) => addArgsEnhancer(enhancer));
 
 const getStories = () => {
-  return [require("../stories/Button.stories.tsx")];
+  return [
+    require("../stories/Button.stories.tsx"),
+    require("../stories/IconButton.stories.tsx"),
+  ];
 };
 
 configure(getStories, module, false);
