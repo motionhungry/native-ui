@@ -9,7 +9,7 @@ import {
 import { MarginProps } from 'styled-system';
 
 type IconButtonProps = {
-  color?: ButtonColorOption;
+  color?: ButtonColorOption | string;
   disabled?: boolean;
   icon: IconName;
   size?: ButtonSize;

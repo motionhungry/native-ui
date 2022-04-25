@@ -30,7 +30,9 @@ argsEnhancers.forEach((enhancer) => addArgsEnhancer(enhancer));
 const getStories = () => {
   return [
     require("../stories/Button.stories.tsx"),
+    require("../stories/Fab.stories.tsx"),
     require("../stories/IconButton.stories.tsx"),
+    require("../stories/TabBar.stories.tsx"),
   ];
 };
 

@@ -17,6 +17,7 @@
     "@motionhungry-ui/core": "*",
     "@motionhungry-ui/hooks": "*",
     "@motionhungry-ui/themes": "*",
+    "@react-navigation/native": "^6.0.10",
     "styled-components": "^5.3.3",
     "styled-system": "^5.1.5"
   }
