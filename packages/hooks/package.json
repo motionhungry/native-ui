@@ -1,0 +1,15 @@
+{
+  "name": "@motionhungry-ui/hooks",
+  "version": "0.0.1",
+  "main": "src/index.ts",
+  "license": "MPL 2.0",
+  "devDependencies": {
+    "@motionhungry-ui/config": "*",
+    "@motionhungry-ui/tsconfig": "*",
+    "typescript": "^4.5.3"
+  },
+  "dependencies": {
+    "@motionhungry-ui/themes": "*",
+    "styled-components": "^5.3.3"
+  }
+}

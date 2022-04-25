@@ -1,0 +1,21 @@
+{
+  "name": "@motionhungry-ui/core",
+  "version": "0.0.1",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "license": "MPL 2.0",
+  "devDependencies": {
+    "@motionhungry-ui/config": "*",
+    "@motionhungry-ui/tsconfig": "*",
+    "@types/react": "^17.0.37",
+    "@types/react-dom": "^17.0.11",
+    "@types/styled-components": "^5.1.24",
+    "@types/styled-components-react-native": "^5.1.3",
+    "@types/styled-system": "^5.1.15",
+    "typescript": "^4.5.3"
+  },
+  "dependencies": {
+    "styled-components": "^5.3.3",
+    "styled-system": "^5.1.5"
+  }
+}

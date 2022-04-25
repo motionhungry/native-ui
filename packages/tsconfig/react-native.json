@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "React Native",
+  "extends": "./base.json",
+  "compilerOptions": {
+    "allowJs": true,
+    "jsx": "react-native",
+    "lib": [
+      "esnext"
+    ],
+    "noEmit": true,
+    "incremental": true,
+    "module": "esnext",
+    "resolveJsonModule": true,
+    "target": "es6"
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
