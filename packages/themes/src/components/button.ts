@@ -15,7 +15,7 @@ export type ButtonVariantSetting = {
   borderColor?: string;
   borderRadius: number;
   borderWidth: number;
-  color?: ButtonColor;
+  color?: ButtonColor | string;
   disabledOpacity: keyof ColorOpacity;
   labelColor?: ColorOpacity;
 };
