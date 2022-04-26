@@ -1,6 +1,5 @@
 import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '@motionhungry-ui/hooks';
-import { color } from '@motionhungry-ui/themes';
 
 import { IconName, TouchableOpacity } from '@motionhungry-ui/core';
 
@@ -14,8 +13,6 @@ export const Fab = ({ icon, onPress }: FabProps) => {
   const {
     components: { Fab: fabTheme },
   } = theme;
-
-  console.log(theme.color[fabTheme.backgroundColor][100]);
 
   return (
     <TouchableOpacity

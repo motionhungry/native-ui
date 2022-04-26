@@ -36,19 +36,19 @@ export const typography: Typography = {
   header1: {
     fontSize: 64,
     fontWeight: 700,
-    letterSpacing: '-0.02em',
+    letterSpacing: -1,
     lineHeight: '120%',
   },
   header2: {
     fontSize: 40,
     fontWeight: 700,
-    letterSpacing: '-0.02em',
+    letterSpacing: -1,
     lineHeight: '120%',
   },
   header3: {
     fontSize: 24,
     fontWeight: 700,
-    letterSpacing: '-0.02em',
+    letterSpacing: -1,
     lineHeight: '120%',
   },
   subtitle: {
@@ -70,7 +70,7 @@ export const typography: Typography = {
     fontSize: 14,
     fontWeight: 700,
     lineHeight: '120%',
-    letterSpacing: '0.02em',
+    letterSpacing: 1,
     textTransform: 'uppercase',
   },
   buttonText: {
