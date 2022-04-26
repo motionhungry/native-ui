@@ -1,5 +1,15 @@
 # @motionhungry-ui/components
 
+## 0.0.4
+
+### Patch Changes
+
+- ef85ccc: Fixes to the dist folder in packages
+- Updated dependencies [ef85ccc]
+  - @motionhungry-ui/core@0.0.4
+  - @motionhungry-ui/hooks@0.0.3
+  - @motionhungry-ui/themes@0.0.4
+
 ## 0.0.3
 
 ### Patch Changes
