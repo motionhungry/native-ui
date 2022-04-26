@@ -1,6 +1,6 @@
 {
   "extends": "@motionhungry-ui/tsconfig/react-native.json",
-  "include": ["src"],
+  "include": ["."],
   "exclude": ["dist", "build", "node_modules"],
   "compilerOptions": {
     "baseUrl": "./src",

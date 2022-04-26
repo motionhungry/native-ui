@@ -2,22 +2,26 @@
   "name": "@motionhungry-ui/hooks",
   "private": false,
   "version": "0.0.2",
-  "main": "dist/index.js",
-  "types": "dist/index.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
   "files": [
-    "dist"
+    "dist/**"
   ],
   "license": "MIT",
   "scripts": {
-    "build": "tsc"
+    "build": "tsup src/index.ts --format esm,cjs --loader '.js=jsx' --dts",
+    "clean": "yarn run rimraf dist .turbo node_modules"
   },
   "devDependencies": {
     "@motionhungry-ui/config": "*",
     "@motionhungry-ui/tsconfig": "*",
+    "rimraf": "^3.0.2",
     "typescript": "^4.5.3"
   },
   "dependencies": {
     "@motionhungry-ui/themes": "*",
+    "react": "17.0.1",
     "styled-components": "^5.3.3"
   },
   "publishConfig": {
