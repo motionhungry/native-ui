@@ -1,6 +1,6 @@
 {
   "name": "@motionhungry-ui/tsconfig",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "license": "MIT",
   "main": "index.js",
   "private": false,
