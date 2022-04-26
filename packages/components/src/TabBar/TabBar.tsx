@@ -1,6 +1,6 @@
 import { Box, IconName } from '@motionhungry-ui/core';
 import { useTheme } from '@motionhungry-ui/hooks';
-import { radius, tabBar } from '@motionhungry-ui/themes';
+import { radius } from '@motionhungry-ui/themes';
 import { useCallback } from 'react';
 
 import { Fab } from '../Fab';
