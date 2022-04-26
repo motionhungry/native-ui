@@ -2,7 +2,6 @@
   "license": "MIT",
   "name": "motionhungry-ui",
   "version": "0.0.1",
-  "private": true,
   "workspaces": [
     "apps/*",
     "packages/*"
