@@ -11,6 +11,7 @@
     "build": "yarn run turbo run build",
     "plop": "plop",
     "prepare": "husky install",
+    "release": "yarn build && yarn changeset publish",
     "sb:android": "turbo run sb:android --scope=@motionhungry-ui/storybook",
     "sb:ios": "turbo run sb:ios --scope=@motionhungry-ui/storybook",
     "sb:web": "turbo run sb:web --scope=@motionhungry-ui/storybook",
