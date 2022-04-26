@@ -1,5 +1,13 @@
 # @motionhungry-ui/hooks
 
+## 0.0.5
+
+### Patch Changes
+
+- 4a2410b: Set the NPM packages to public
+- Updated dependencies [4a2410b]
+  - @motionhungry-ui/themes@0.0.6
+
 ## 0.0.4
 
 ### Patch Changes

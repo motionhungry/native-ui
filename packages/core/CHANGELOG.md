@@ -1,5 +1,11 @@
 # @motionhungry-ui/core
 
+## 0.0.6
+
+### Patch Changes
+
+- 4a2410b: Set the NPM packages to public
+
 ## 0.0.5
 
 ### Patch Changes
