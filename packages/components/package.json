@@ -1,7 +1,12 @@
 {
   "name": "@motionhungry-ui/components",
+  "private": false,
   "version": "0.0.2",
-  "main": "src/index.ts",
+  "main": "index.js",
+  "types": "index.js",
+  "files": [
+    "dist"
+  ],
   "license": "MIT",
   "scripts": {
     "build": "tsc"
@@ -23,5 +28,8 @@
     "@react-navigation/native": "^6.0.10",
     "styled-components": "^5.3.3",
     "styled-system": "^5.1.5"
+  },
+  "publishConfig": {
+    "directory": "dist"
   }
 }
