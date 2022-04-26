@@ -5,9 +5,15 @@
   "files": [
     "eslint-preset.js"
   ],
+  "scripts": {
+    "clean": "yarn run rimraf node_modules"
+  },
   "dependencies": {
     "@react-native-community/eslint-config": "^3.0.1",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-react": "7.28.0"
+  },
+  "devDependencies": {
+    "rimraf": "^3.0.2"
   }
 }

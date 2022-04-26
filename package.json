@@ -9,6 +9,7 @@
   ],
   "scripts": {
     "build": "yarn run turbo run build",
+    "clean": "turbo run clean",
     "plop": "plop",
     "prepare": "husky install",
     "release": "yarn build && yarn changeset publish",

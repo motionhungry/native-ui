@@ -9,7 +9,6 @@
       "esnext"
     ],
     "noEmit": true,
-    "incremental": true,
     "module": "esnext",
     "resolveJsonModule": true,
     "target": "es6"
