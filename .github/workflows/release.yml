@@ -25,23 +25,27 @@ jobs:
       - name: Install Dependencies
         run: yarn
 
+      - name: Set Github User
+        run: |
+          /usr/bin/git config user.name "motionhungry-ci"
+          /usr/bin/git config user.email "kyle+ci@motionhungry.com"
+
       - name: Create Release Pull Request or Publish to npm
         id: changesets
         uses: changesets/action@v1
-        commit: 'chore: version packages'
-        setupGitUser: motionhungry-ci
         with:
           publish: yarn release
           commit: 'chore: version packages'
-          setupGitUser: motionhungry-ci
+          title: 'chore: version packages'
+          setupGitUser: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Discord notification
+        uses: Ilshidur/action-discord@master
         if: steps.changesets.outputs.published == 'true'
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
-        uses: Ilshidur/action-discord@master
         with:
           args: 'The project {{ EVENT_PAYLOAD.repository.full_name }} has been deployed.'
