@@ -21,5 +21,8 @@
   },
   "dependencies": {
     "styled-components": "^5.3.3"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
