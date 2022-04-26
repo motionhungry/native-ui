@@ -30,8 +30,5 @@
     "react-native": "0.64.3",
     "styled-components": "^5.3.3",
     "styled-system": "^5.1.5"
-  },
-  "publishConfig": {
-    "directory": "dist"
   }
 }
