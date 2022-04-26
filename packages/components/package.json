@@ -2,7 +2,10 @@
   "name": "@motionhungry-ui/components",
   "version": "0.0.1",
   "main": "src/index.ts",
-  "license": "MPL 2.0",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc"
+  },
   "devDependencies": {
     "@motionhungry-ui/config": "*",
     "@motionhungry-ui/tsconfig": "*",
