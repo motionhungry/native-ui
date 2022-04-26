@@ -1,8 +1,12 @@
 {
   "name": "@motionhungry-ui/themes",
+  "private": false,
   "version": "0.0.2",
-  "main": "src/index.ts",
-  "types": "src/index.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.js",
+  "files": [
+    "dist"
+  ],
   "license": "MIT",
   "scripts": {
     "build": "tsc"
@@ -14,5 +18,8 @@
   },
   "dependencies": {
     "styled-components": "^5.3.3"
+  },
+  "publishConfig": {
+    "directory": "dist"
   }
 }

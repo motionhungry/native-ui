@@ -1,7 +1,7 @@
 {
   "name": "@motionhungry-ui/tsconfig",
   "version": "0.0.2",
-  "private": true,
+  "private": false,
   "files": [
     "base.json",
     "react-library.json",

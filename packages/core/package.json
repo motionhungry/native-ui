@@ -1,9 +1,16 @@
 {
   "name": "@motionhungry-ui/core",
+  "private": false,
   "version": "0.0.2",
-  "main": "src/index.ts",
-  "types": "src/index.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.js",
+  "files": [
+    "dist"
+  ],
   "license": "MIT",
+  "scripts": {
+    "build": "tsc"
+  },
   "devDependencies": {
     "@motionhungry-ui/config": "*",
     "@motionhungry-ui/tsconfig": "*",
@@ -17,5 +24,8 @@
   "dependencies": {
     "styled-components": "^5.3.3",
     "styled-system": "^5.1.5"
+  },
+  "publishConfig": {
+    "directory": "dist"
   }
 }
