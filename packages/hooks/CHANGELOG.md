@@ -1,5 +1,15 @@
 # @motionhungry-ui/hooks
 
+## 0.0.4
+
+### Patch Changes
+
+- a5c8557: Fixes to dist folder structure
+- a5c8557: Fixes to the dist folder in packages
+- Updated dependencies [a5c8557]
+- Updated dependencies [a5c8557]
+  - @motionhungry-ui/themes@0.0.5
+
 ## 0.0.3
 
 ### Patch Changes

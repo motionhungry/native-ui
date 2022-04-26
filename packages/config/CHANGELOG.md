@@ -1,5 +1,12 @@
 # @motionhungry-ui/config
 
+## 0.0.4
+
+### Patch Changes
+
+- a5c8557: Fixes to dist folder structure
+- a5c8557: Fixes to the dist folder in packages
+
 ## 0.0.3
 
 ### Patch Changes
