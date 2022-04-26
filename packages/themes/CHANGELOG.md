@@ -1,5 +1,12 @@
 # @motionhungry-ui/themes
 
+## 0.0.3
+
+### Patch Changes
+
+- 0eb09b0: Update package.json to remove private package status
+- 0eb09b0: Github Actions fixes
+
 ## 0.0.2
 
 ### Patch Changes
