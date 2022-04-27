@@ -26,6 +26,7 @@
     "typescript": "^4.5.3"
   },
   "dependencies": {
+    "@expo/vector-icons": "^13.0.0",
     "@motionhungry-ui/core": "*",
     "@motionhungry-ui/hooks": "*",
     "@motionhungry-ui/themes": "*",
