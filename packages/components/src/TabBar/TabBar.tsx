@@ -7,6 +7,7 @@ import { useCallback } from 'react';
 
 import { Fab } from '../Fab';
 import { IconButton } from '../IconButton';
+import { FabMask } from './components';
 
 export type TabIndex = 0 | 1 | 2 | 3 | 4;
 
@@ -45,17 +46,20 @@ const TabBar = ({
       [activeIndex]
     );
 
+  const borderRadius = radius[tabBarTheme.borderRadius];
+
   if (variant === 'fab') {
     return (
       <Box flexDirection="row">
         <Box
           backgroundColor={tabBarTheme.backgroundColor}
-          borderTopLeftRadius={20}
-          borderTopRightRadius={20}
+          borderTopLeftRadius={borderRadius}
+          borderTopRightRadius={borderRadius}
           flex={1}
           flexDirection="row"
-          height={52}
           justifyContent="space-between"
+          padding={2}
+          marginTop={20}
         >
           <IconButton
             color={getIconColor(0)()}
@@ -79,44 +83,37 @@ const TabBar = ({
           flexDirection="column"
           justifyContent="flex-end"
           alignItems="center"
+          width={76}
         >
-          <Box
-            backgroundColor={tabBarTheme.backgroundColor}
-            width={76}
-            height={38}
-          />
-          <Box
-            position="absolute"
-            width={76}
-            height={76}
-            borderRadius={45}
-            backgroundColor={theme.backgroundColor}
-          />
-          <Fab icon={icons[2]} onPress={() => onTabPress(2)} />
+          <FabMask color={tabBarTheme.backgroundColor} />
+          <Box position="absolute" bottom={30}>
+            <Fab icon={icons[2]} onPress={() => onTabPress(2)} />
+          </Box>
         </Box>
         <Box
           backgroundColor={tabBarTheme.backgroundColor}
-          borderTopLeftRadius={20}
-          borderTopRightRadius={20}
+          borderTopLeftRadius={borderRadius}
+          borderTopRightRadius={borderRadius}
           flex={1}
           flexDirection="row"
-          height={52}
           justifyContent="space-between"
+          padding={2}
+          marginTop={20}
         >
           <IconButton
-            color={getIconColor(0)()}
+            color={getIconColor(3)()}
             variant="tertiary"
-            icon={icons[0]}
+            icon={icons[3]}
             onPress={() => {
-              onTabPress(0);
+              onTabPress(3);
             }}
           />
           <IconButton
-            color={getIconColor(1)()}
+            color={getIconColor(4)()}
             variant="tertiary"
-            icon={icons[1]}
+            icon={icons[4]}
             onPress={() => {
-              onTabPress(1);
+              onTabPress(4);
             }}
           />
         </Box>
