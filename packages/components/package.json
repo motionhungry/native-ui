@@ -10,8 +10,9 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "tsup src/index.ts --format esm,cjs --loader '.js=jsx' --dts",
-    "clean": "yarn run rimraf dist .turbo node_modules"
+    "build": "tsup src/index.ts --format esm,cjs --loader '.js=jsx' --dts --external react",
+    "clean": "yarn run rimraf dist .turbo node_modules",
+    "dev": "tsup src/index.ts --format esm,cjs --loader '.js=jsx' --dts --watch --external react"
   },
   "devDependencies": {
     "@motionhungry-ui/config": "*",

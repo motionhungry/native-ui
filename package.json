@@ -13,9 +13,9 @@
     "plop": "plop",
     "prepare": "husky install",
     "release": "yarn build && yarn changeset publish",
-    "sb:android": "turbo run sb:android --scope=@motionhungry-ui/storybook",
-    "sb:ios": "turbo run sb:ios --scope=@motionhungry-ui/storybook",
-    "sb:web": "turbo run sb:web --scope=@motionhungry-ui/storybook",
+    "sb:android": "turbo run sb:android dev",
+    "sb:ios": "turbo run sb:ios dev",
+    "sb:web": "turbo run sb:web dev",
     "sb:prestart": "yarn --cwd ./apps/storybook sb:watch",
     "sb:watch": "yarn --cwd ./apps/storybook sb:watch"
   },
