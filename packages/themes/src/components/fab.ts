@@ -13,5 +13,5 @@ export type Fab = {
 export const fab: Fab = {
   backgroundColor: 'secondary',
   iconColor: color.white[100],
-  shadowColor: '#25152b',
+  shadowColor: color.indigoBlack[25],
 };

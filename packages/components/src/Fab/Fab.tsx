@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '@motionhungry-ui/hooks';
 

@@ -1,8 +1,9 @@
 {
   "name": "@motionhungry-ui/storybook",
-  "version": "0.0.3",
+  "version": "0.0.0",
   "main": "index.ts",
   "scripts": {
+    "clean": "yarn run rimraf node_modules",
     "sb:android": "expo start --android",
     "sb:ios": "expo start --ios",
     "sb:web": "expo start --web",
@@ -36,6 +37,7 @@
     "@babel/core": "^7.12.9",
     "@types/react": "~17.0.21",
     "@types/react-native": "~0.64.12",
+    "rimraf": "^3.0.2",
     "typescript": "~4.3.5"
   },
   "private": true

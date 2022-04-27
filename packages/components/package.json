@@ -10,8 +10,9 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "tsup src/index.ts --format esm,cjs --loader '.js=jsx' --dts",
-    "clean": "yarn run rimraf dist .turbo node_modules"
+    "build": "tsup src/index.ts --format esm,cjs --loader '.js=jsx' --dts --external react",
+    "clean": "yarn run rimraf dist .turbo node_modules",
+    "dev": "tsup src/index.ts --format esm,cjs --loader '.js=jsx' --dts --watch --external react"
   },
   "devDependencies": {
     "@motionhungry-ui/config": "*",
@@ -25,12 +26,14 @@
     "typescript": "^4.5.3"
   },
   "dependencies": {
+    "@expo/vector-icons": "^13.0.0",
     "@motionhungry-ui/core": "*",
     "@motionhungry-ui/hooks": "*",
     "@motionhungry-ui/themes": "*",
     "@react-navigation/native": "^6.0.10",
     "react": "17.0.1",
     "react-native": "0.64.3",
+    "react-native-svg": "^12.3.0",
     "styled-components": "^5.3.3",
     "styled-system": "^5.1.5"
   },

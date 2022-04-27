@@ -1,6 +1,12 @@
+import React from 'react';
+
 import { TouchableOpacity, Text } from '@motionhungry-ui/core';
 import { useTheme } from '@motionhungry-ui/hooks';
-import { ButtonSize, ButtonVariant, ButtonColorOption } from '@motionhungry-ui/themes';
+import {
+  ButtonSize,
+  ButtonVariant,
+  ButtonColorOption,
+} from '@motionhungry-ui/themes';
 import { MarginProps } from 'styled-system';
 
 type ButtonProps = {

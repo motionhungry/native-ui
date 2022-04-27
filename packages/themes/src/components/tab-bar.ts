@@ -17,9 +17,9 @@ export type TabBar = {
   };
 };
 
-export const tabBar: TabBar = ({
+export const tabBar: TabBar = {
   backgroundColor: color.concrete[100],
-  borderRadius: 'large',
+  borderRadius: 'xlarge',
   iconColor: {
     active: 'secondary',
     inactive: 'shale',
@@ -28,4 +28,4 @@ export const tabBar: TabBar = ({
     active: 100,
     inactive: 100,
   },
-});
+};
