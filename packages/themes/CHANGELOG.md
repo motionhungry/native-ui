@@ -1,5 +1,11 @@
 # @motionhungry-ui/themes
 
+## 0.0.7
+
+### Patch Changes
+
+- 2ae4bc3: Added a Fab variant of the TabBar component
+
 ## 0.0.6
 
 ### Patch Changes
