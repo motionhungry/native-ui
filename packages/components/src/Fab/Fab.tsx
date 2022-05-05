@@ -25,15 +25,12 @@ export const Fab = ({ icon, onPress }: FabProps) => {
       height={60}
       justifyContent="center"
       onPress={onPress}
-      // position="absolute"
-      // bottom={10}
       width={60}
     >
       <Ionicons
         name={icon}
         size={32}
         color={fabTheme.iconColor}
-        style={{ paddingTop: 1, paddingLeft: 3 }}
       />
     </TouchableOpacity>
   );

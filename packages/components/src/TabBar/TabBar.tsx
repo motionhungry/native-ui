@@ -134,6 +134,7 @@ const TabBar = ({
         const iconColor = getIconColor(index as TabIndex)();
         return (
           <IconButton
+            key={`tab-button-${index}`}
             color={iconColor}
             variant="tertiary"
             icon={icon}
