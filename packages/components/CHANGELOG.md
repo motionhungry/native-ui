@@ -1,5 +1,11 @@
 # @motionhungry-ui/components
 
+## 0.0.8
+
+### Patch Changes
+
+- 7328758: Fix Fab alignment bug. Fixed console warnings.
+
 ## 0.0.7
 
 ### Patch Changes
