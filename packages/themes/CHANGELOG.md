@@ -1,5 +1,11 @@
 # @motionhungry-ui/themes
 
+## 0.0.9
+
+### Patch Changes
+
+- fe8d4f3: Fix text input theme
+
 ## 0.0.8
 
 ### Patch Changes
