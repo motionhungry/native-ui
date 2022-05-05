@@ -69,7 +69,6 @@ export const typography: Typography = {
   pretitle: {
     fontSize: 14,
     fontWeight: 700,
-    lineHeight: '120%',
     letterSpacing: 1,
     textTransform: 'uppercase',
   },
@@ -84,6 +83,6 @@ export const typography: Typography = {
   listItem: {
     fontSize: 18,
     fontWeight: 500,
-    lineHeight: '100%',
+    lineHeight: 20,
   },
 };

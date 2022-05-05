@@ -33,6 +33,7 @@ const getStories = () => {
     require("../stories/Fab.stories.tsx"),
     require("../stories/IconButton.stories.tsx"),
     require("../stories/TabBar.stories.tsx"),
+    require("../stories/TextInput.stories.tsx"),
   ];
 };
 
