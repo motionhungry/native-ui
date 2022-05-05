@@ -24,7 +24,7 @@ export const textInput: TextInput = {
     color: color.shale[100],
     width: 2,
   },
-  color: color.indigoBlack[100];
+  color: color.indigoBlack[100],
   label: {
     typography: typography.pretitle,
     color: color.secondary[100],
