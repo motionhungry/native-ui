@@ -1,5 +1,11 @@
 # @motionhungry-ui/themes
 
+## 0.0.10
+
+### Patch Changes
+
+- 6eebf74: Fix line-height in typography theme
+
 ## 0.0.9
 
 ### Patch Changes
