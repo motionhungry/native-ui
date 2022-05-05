@@ -1,5 +1,13 @@
 # @motionhungry-ui/components
 
+## 0.0.9
+
+### Patch Changes
+
+- 6b499f8: Added a basic text input component
+- Updated dependencies [6b499f8]
+  - @motionhungry-ui/themes@0.0.8
+
 ## 0.0.8
 
 ### Patch Changes
