@@ -33,12 +33,48 @@ const NativeTextInput = styled.TextInput<NativeTextInputProps>`
 
 type TextInputProps = {
   label?: string;
-} & MarginProps & RNTextInputProps;
+} & MarginProps &
+  RNTextInputProps;
 
-const TextInput = ({ label, ...props }: TextInputProps): JSX.Element => {
+const TextInput = ({
+  label,
+  m,
+  margin,
+  mt,
+  marginTop,
+  mb,
+  marginBottom,
+  ml,
+  marginLeft,
+  mr,
+  marginRight,
+  my,
+  marginY,
+  mx,
+  marginX,
+  ...props
+}: TextInputProps): JSX.Element => {
   const theme = useTheme();
+
+  const marginProps = {
+    m,
+    margin,
+    mt,
+    marginTop,
+    mb,
+    marginBottom,
+    ml,
+    marginLeft,
+    mr,
+    marginRight,
+    my,
+    marginY,
+    mx,
+    marginX,
+  };
+
   return (
-    <Box {...props}>
+    <Box {...marginProps}>
       {label && (
         <Text
           color={theme.components.TextInput.label.color}
@@ -56,6 +92,7 @@ const TextInput = ({ label, ...props }: TextInputProps): JSX.Element => {
         color={theme.components.TextInput.color}
         p={2}
         {...theme.components.TextInput.typography}
+        {...props}
       />
     </Box>
   );

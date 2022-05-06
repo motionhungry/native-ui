@@ -1,5 +1,11 @@
 # @motionhungry-ui/components
 
+## 0.0.10
+
+### Patch Changes
+
+- 324475f: Added native TextInput props to styled TextInput component
+
 ## 0.0.9
 
 ### Patch Changes
