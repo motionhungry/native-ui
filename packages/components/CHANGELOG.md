@@ -1,5 +1,11 @@
 # @motionhungry-ui/components
 
+## 0.0.11
+
+### Patch Changes
+
+- 33fb5b7: Fixed margin props on text input component
+
 ## 0.0.10
 
 ### Patch Changes
