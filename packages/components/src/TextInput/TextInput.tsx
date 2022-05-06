@@ -56,22 +56,24 @@ const TextInput = ({
 }: TextInputProps): JSX.Element => {
   const theme = useTheme();
 
-  const marginProps = {
-    m,
-    margin,
-    mt,
-    marginTop,
-    mb,
-    marginBottom,
-    ml,
-    marginLeft,
-    mr,
-    marginRight,
-    my,
-    marginY,
-    mx,
-    marginX,
-  };
+  const marginProps = Object.fromEntries(
+    Object.entries({
+      m,
+      margin,
+      mt,
+      marginTop,
+      mb,
+      marginBottom,
+      ml,
+      marginLeft,
+      mr,
+      marginRight,
+      my,
+      marginY,
+      mx,
+      marginX,
+    }).filter(([key, value]) => !!value)
+  );
 
   return (
     <Box {...marginProps}>

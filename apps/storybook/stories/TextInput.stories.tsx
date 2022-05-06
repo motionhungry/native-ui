@@ -7,6 +7,7 @@ const TextInputMeta: ComponentMeta<typeof TextInput> = {
   component: TextInput,
   args: {
     label: 'Some Label',
+    mt: 100,
   },
 };
 
