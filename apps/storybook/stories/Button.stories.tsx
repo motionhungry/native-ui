@@ -9,7 +9,7 @@ const ButtonMeta: ComponentMeta<typeof Button> = {
     color: 'primary',
     disabled: false,
     label: 'Press Me',
-    size: 'default',
+    size: 'large',
     variant: 'primary',
   },
   argTypes: {
@@ -19,7 +19,7 @@ const ButtonMeta: ComponentMeta<typeof Button> = {
     },
     onPress: { action: 'pressed' },
     size: {
-      options: ['default', 'small'],
+      options: ['large', 'small'],
       control: { type: 'radio' },
     },
     variant: {
