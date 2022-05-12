@@ -10,7 +10,7 @@ const theme = defaultTheme;
 
 const Playground = () => {
   return (
-    <Button onPress={() => {}} label="Button" />
+    <Button leftIcon="scan" label="Button" />
   );
 };
 

@@ -1,4 +1,17 @@
-export type SpaceVariant = 0 | 0.5 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
+export type SpaceVariant =
+  | 0
+  | 0.5
+  | 1
+  | 1.5
+  | 2
+  | 3
+  | 4
+  | 5
+  | 6
+  | 7
+  | 8
+  | 9
+  | 10;
 
 export type Space = Record<SpaceVariant, number>;
 
@@ -6,6 +19,7 @@ export const space: Space = {
   0: 0,
   0.5: 4,
   1: 8,
+  1.5: 12,
   2: 16,
   3: 24,
   4: 32,

@@ -23,6 +23,8 @@ const Text = ({
   const color_ = color ?? theme.components.Text.defaultColor;
   return (
     <Typography
+      alignItems="center"
+      justifyContent="center"
       color={color_}
       fontFamily={fontFamily}
       textAlign={textAlign}
