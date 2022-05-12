@@ -16,6 +16,15 @@
     "dev": {
       "cache": false
     },
+    "pg:ios": {
+      "cache": false
+    },
+    "pg:android": {
+      "cache": false
+    },
+    "pg:web": {
+      "cache": false
+    },
     "sb:ios": {
       "cache": false
     },

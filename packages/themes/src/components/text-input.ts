@@ -1,20 +1,16 @@
 import { color } from '../base/color';
 import { radius } from '../base/radius';
-import { typography, TypeVariantSetting } from '../base/typography';
+import { FontSizeVariant, textConfig } from './text';
 
 export interface TextInput {
   backgroundColor: string;
   border: {
-    radius: number;
+    radius: string;
     color: string;
     width: number
   };
   color: string;
-  label: {
-    typography: TypeVariantSetting;
-    color: string;
-  };
-  typography: TypeVariantSetting;
+  label: { color: string } & FontSizeVariant;
 }
 
 export const textInput: TextInput = {
@@ -26,8 +22,7 @@ export const textInput: TextInput = {
   },
   color: color.indigoBlack[100],
   label: {
-    typography: typography.pretitle,
+    ...textConfig.variant.medium,
     color: color.secondary[100],
   },
-  typography: typography.listItem,
 };

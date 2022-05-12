@@ -1,83 +1,48 @@
 import React from 'react';
 
-import { TouchableOpacity, Typography } from '@motionhungry-ui/core';
+import { TouchableOpacity } from '@motionhungry-ui/core';
 import { useTheme } from '@motionhungry-ui/hooks';
-import {
-  ButtonSize,
-  ButtonVariant,
-  ButtonColorOption,
-} from '@motionhungry-ui/themes';
+import { ButtonSize, ButtonVariant } from '@motionhungry-ui/themes';
 import { MarginProps } from 'styled-system';
 
+import { Text } from '../Text';
+
 type ButtonProps = {
-  color?: ButtonColorOption;
   disabled?: boolean;
   label: string;
   size?: ButtonSize;
   variant?: ButtonVariant;
-  onPress: () => void;
+  onPress?: () => void;
 } & MarginProps;
 
 export const Button = ({
-  color = 'primary',
   disabled = false,
   label,
-  size = 'default',
+  size = 'large',
   variant = 'primary',
-  onPress,
+  onPress = () => {},
   ...props
 }: ButtonProps): JSX.Element => {
   const theme = useTheme();
   const {
     components: { Button: buttonTheme },
   } = theme;
-  const variantTheme = buttonTheme[variant];
 
-  const opacity = disabled ? variantTheme.disabledOpacity : 100;
-
-  const backgroundColor = (() => {
-    if (variantTheme.backgroundColor) {
-      return variantTheme.backgroundColor;
-    }
-    if (variant === 'primary') {
-      return theme.color[color][opacity];
-    }
-    return undefined;
-  })();
-
-  const borderColor = (() => {
-    if (variantTheme.borderWidth > 0) {
-      return theme.color[color][opacity];
-    }
-    return undefined;
-  })();
-
-  const labelColor = (() => {
-    if (variantTheme.labelColor) {
-      return variantTheme.labelColor[opacity];
-    }
-    return theme.color[color][opacity];
-  })();
+  const { box: boxVariant, label: labelVariant } = buttonTheme.variant[variant];
+  const { box: boxSize, label: labelSize } = buttonTheme.size[size];
 
   return (
     <TouchableOpacity
-      backgroundColor={backgroundColor}
-      borderColor={borderColor}
-      borderRadius={variantTheme.borderRadius}
-      borderWidth={variantTheme.borderWidth}
       disabled={disabled}
       justifyContent="center"
-      height={
-        size === 'default'
-          ? buttonTheme.height.default
-          : buttonTheme.height.small
-      }
       onPress={onPress}
+      {...boxSize}
+      {...boxVariant}
       {...props}
     >
-      <Typography color={labelColor} {...buttonTheme.typeVariant}>
+      <Text textAlign="center" {...labelSize} {...labelVariant}>
         {label}
-      </Typography>
+      </Text>
     </TouchableOpacity>
   );
 };

@@ -5,23 +5,21 @@ import {
   Radius,
   space,
   Space,
-  typography,
-  Typography,
 } from '../base';
 
 import {
-  button,
-  Button,
+  buttonConfig,
+  ButtonConfig,
   fab,
   Fab,
   heading,
   Heading,
-  iconButton,
-  IconButton,
+  iconButtonConfig,
+  IconButtonConfig,
   TabBar,
   tabBar,
-  text,
-  Text,
+  textConfig,
+  TextConfig,
   TextInput,
   textInput,
 } from '../components';
@@ -31,14 +29,13 @@ export type Theme = {
   color: Color;
   radius: Radius;
   space: Space;
-  typography: Typography;
   components: {
-    Button: Button;
+    Button: ButtonConfig;
     Fab: Fab;
     Heading: Heading;
-    IconButton: IconButton;
+    IconButton: IconButtonConfig;
     TabBar: TabBar;
-    Text: Text;
+    Text: TextConfig;
     TextInput: TextInput;
   };
 };
@@ -48,14 +45,13 @@ export const baseTheme: Theme = {
   color,
   radius,
   space,
-  typography,
   components: {
-    Button: button,
+    Button: buttonConfig,
     Fab: fab,
     Heading: heading,
-    IconButton: iconButton,
+    IconButton: iconButtonConfig,
     TabBar: tabBar,
+    Text: textConfig,
     TextInput: textInput,
-    Text: text,
   },
 };

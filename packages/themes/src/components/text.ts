@@ -1,36 +1,40 @@
-type TextSize = 1 | 2 | 3 | 4;
+import { color } from '../base/color';
 
-type FontWeight = 'regular' | 'medium' | 'semi-bold' |'bold';
+export type TextSize = 'large' | 'medium' | 'small' | 'xsmall';
 
-type SizeVariant = {
+export type FontWeight = 'regular' | 'medium' | 'semi-bold' |'bold';
+
+export type FontSizeVariant = {
   fontSize: string;
-  lineHeight: string;
+  fontWeight?: FontWeight;
   letterSpacing: string;
+  lineHeight: string;
 };
 
-export type Text = {
-  variant: Record<TextSize, SizeVariant>;
+export type TextConfig = {
+  variant: Record<TextSize, FontSizeVariant>;
   fontWeight: Record<FontWeight, string>;
+  defaultColor: string;
 };
 
-export const text: Text = {
+export const textConfig: TextConfig = {
   variant: {
-    1: {
+    large: {
       fontSize: '20px',
       lineHeight: '32px',
       letterSpacing: '0.75px',
     },
-    2: {
+    medium: {
       fontSize: '17px',
       lineHeight: '28px',
       letterSpacing: '0.75px',
     },
-    3: {
+    small: {
       fontSize: '15px',
       lineHeight: '24px',
       letterSpacing: '0.75px',
     },
-    4: {
+    xsmall: {
       fontSize: '13px',
       lineHeight: '22px',
       letterSpacing: '0.25px',
@@ -42,4 +46,5 @@ export const text: Text = {
     'semi-bold': 'Poppins-SemiBold',
     bold: 'Poppins-Bold',
   },
+  defaultColor: color.black[100],
 };

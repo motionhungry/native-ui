@@ -1,10 +1,10 @@
 export type BorderRadiusVariant = 'xlarge' | 'large' | 'medium' | 'small';
 
-export type Radius = Record<BorderRadiusVariant, number>;
+export type Radius = Record<BorderRadiusVariant, string>;
 
 export const radius: Radius = {
-  xlarge: 20,
-  large: 16,
-  medium: 8,
-  small: 6,
+  xlarge: '20px',
+  large: '16px',
+  medium: '12px',
+  small: '8px',
 };

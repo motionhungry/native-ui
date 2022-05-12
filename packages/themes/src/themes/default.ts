@@ -13,12 +13,24 @@ export const defaultTheme: Theme = {
   },
   components: {
     ...baseTheme.components,
+    Button: {
+      ...baseTheme.components.Button,
+      variant: {
+        ...baseTheme.components.Button.variant,
+        primary: {
+          ...baseTheme.components.Button.variant.primary,
+          box: {
+            backgroundColor: primaryColor[100],
+          },
+        },
+      },
+    },
     TextInput: {
       ...baseTheme.components.TextInput,
       label: {
         ...baseTheme.components.TextInput.label,
         color: secondaryColor[100],
-      }
-    }
-  }
+      },
+    },
+  },
 };

@@ -1,73 +1,65 @@
 import { color } from '../base/color';
 import { radius } from '../base/radius';
-import { textConfig, FontSizeVariant } from './text';
 
-export type ButtonSize = 'xlarge' | 'large' | 'medium' | 'small';
+export type IconButtonSize = 'xlarge' | 'large' | 'medium' | 'small';
 
-export type ButtonVariant = 'primary' | 'secondary' | 'tertiary';
+export type IconButtonVariant = 'primary' | 'secondary' | 'tertiary';
 
-type ButtonSizeConfig = {
+type IconButtonSizeConfig = {
   box: {
+    width: string;
     height: string;
     borderRadius: string;
   };
-  label: FontSizeVariant;
-  iconSize: number;
+  iconSize: 24;
 };
 
-type ButtonVariantConfig = {
+type IconButtonVariantConfig = {
   box: {
     backgroundColor?: string;
     borderColor?: string;
     borderWidth?: string;
   };
-  label: {
-    color: string;
-  };
+  iconColor: string;
 };
 
-export type ButtonConfig = {
-  size: Record<ButtonSize, ButtonSizeConfig>;
-  variant: Record<ButtonVariant, ButtonVariantConfig>;
+export type IconButtonConfig = {
+  size: Record<IconButtonSize, IconButtonSizeConfig>;
+  variant: Record<IconButtonVariant, IconButtonVariantConfig>;
 };
 
-const styleLabel = (variant: FontSizeVariant): FontSizeVariant => ({
-  ...variant,
-  fontWeight: 'semi-bold',
-});
-
-export const buttonConfig = {
+export const iconButtonConfig: IconButtonConfig = {
   size: {
     xlarge: {
       box: {
         height: '72px',
+        width: '72px',
         borderRadius: radius.large,
       },
-      label: styleLabel(textConfig.variant.medium),
       iconSize: 24,
     },
     large: {
       box: {
         height: '64px',
+        width: '64px',
         borderRadius: radius.medium,
       },
-      label: styleLabel(textConfig.variant.small),
       iconSize: 24,
     },
     medium: {
       box: {
         height: '56px',
+        width: '56px',
         borderRadius: radius.medium,
       },
-      label: styleLabel(textConfig.variant.small),
       iconSize: 24,
     },
     small: {
       box: {
         height: '40px',
+        width: '40px',
         borderRadius: radius.small,
       },
-      label: styleLabel(textConfig.variant.xsmall),
       iconSize: 24,
     },
   },
@@ -76,24 +68,18 @@ export const buttonConfig = {
       box: {
         backgroundColor: color.black[100],
       },
-      label: {
-        color: color.white[100],
-      },
+      iconColor: color.white[100],
     },
     secondary: {
       box: {
         borderWidth: '2px',
         borderColor: color.black[100],
       },
-      label: {
-        color: color.black[100],
-      },
+      iconColor: color.black[100],
     },
     tertiary: {
       box: {},
-      label: {
-        color: color.black[100],
-      },
+      iconColor: color.black[100],
     },
   },
 };
