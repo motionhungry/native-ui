@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { TouchableOpacity, Text } from '@motionhungry-ui/core';
+import { TouchableOpacity, Typography } from '@motionhungry-ui/core';
 import { useTheme } from '@motionhungry-ui/hooks';
 import {
   ButtonSize,
@@ -75,9 +75,9 @@ export const Button = ({
       onPress={onPress}
       {...props}
     >
-      <Text color={labelColor} {...buttonTheme.typeVariant}>
+      <Typography color={labelColor} {...buttonTheme.typeVariant}>
         {label}
-      </Text>
+      </Typography>
     </TouchableOpacity>
   );
 };

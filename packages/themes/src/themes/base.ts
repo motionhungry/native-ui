@@ -14,10 +14,14 @@ import {
   Button,
   fab,
   Fab,
+  heading,
+  Heading,
   iconButton,
   IconButton,
   TabBar,
   tabBar,
+  text,
+  Text,
   TextInput,
   textInput,
 } from '../components';
@@ -31,8 +35,10 @@ export type Theme = {
   components: {
     Button: Button;
     Fab: Fab;
+    Heading: Heading;
     IconButton: IconButton;
     TabBar: TabBar;
+    Text: Text;
     TextInput: TextInput;
   };
 };
@@ -46,8 +52,10 @@ export const baseTheme: Theme = {
   components: {
     Button: button,
     Fab: fab,
+    Heading: heading,
     IconButton: iconButton,
     TabBar: tabBar,
     TextInput: textInput,
+    Text: text,
   },
 };

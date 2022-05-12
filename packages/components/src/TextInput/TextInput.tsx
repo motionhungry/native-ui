@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Text } from '@motionhungry-ui/core';
+import { Box, Typography } from '@motionhungry-ui/core';
 import { useTheme } from '@motionhungry-ui/hooks';
 import { TextInputProps as RNTextInputProps } from 'react-native';
 import styled from 'styled-components/native';
@@ -78,13 +78,13 @@ const TextInput = ({
   return (
     <Box {...marginProps}>
       {label && (
-        <Text
+        <Typography
           color={theme.components.TextInput.label.color}
           mb={0.5}
           {...theme.components.TextInput.label.typography}
         >
           {label}
-        </Text>
+        </Typography>
       )}
       <NativeTextInput
         backgroundColor={theme.components.TextInput.backgroundColor}

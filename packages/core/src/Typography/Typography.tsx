@@ -15,7 +15,7 @@ import {
   TypographyProps,
 } from 'styled-system';
 
-type TextProps = BorderProps &
+type Props = BorderProps &
   ColorProps &
   FlexboxProps &
   LayoutProps &
@@ -28,7 +28,7 @@ const textTransform = system({
   },
 });
 
-export const Text = styled.Text<TextProps>`
+export const Typography = styled.Text<Props>`
   ${border}
   ${color}
   ${flexbox}
