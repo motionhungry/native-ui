@@ -3,10 +3,10 @@ import { SafeAreaView } from 'react-native';
 import { ThemeProvider } from 'styled-components/native';
 import { useFonts } from 'expo-font';
 
-import { defaultTheme } from '@motionhungry-ui/themes';
+import { defaultTheme, pegasusTheme } from '@motionhungry-ui/themes';
 import { Box, Button, TextInput } from '@motionhungry-ui/components';
 
-const theme = defaultTheme;
+const theme = pegasusTheme;
 
 const Playground = () => {
   const [value1, setValue1] = useState('');
@@ -18,12 +18,14 @@ const Playground = () => {
         mb={1.5}
         value={value1}
         setValue={setValue1}
+        error
       />
       <TextInput
         label="Phone Number"
         mb={1.5}
         value={value2}
         setValue={setValue2}
+        success
       />
       <Button size="large" leftIcon="scan" label="Button" />
     </>
