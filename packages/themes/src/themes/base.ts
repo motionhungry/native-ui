@@ -20,8 +20,8 @@ import {
   tabBar,
   textConfig,
   TextConfig,
-  TextInput,
-  textInput,
+  TextInputConfig,
+  textInputConfig,
 } from '../components';
 
 export type Theme = {
@@ -36,7 +36,7 @@ export type Theme = {
     IconButton: IconButtonConfig;
     TabBar: TabBar;
     Text: TextConfig;
-    TextInput: TextInput;
+    TextInput: TextInputConfig;
   };
 };
 
@@ -52,6 +52,6 @@ export const baseTheme: Theme = {
     IconButton: iconButtonConfig,
     TabBar: tabBar,
     Text: textConfig,
-    TextInput: textInput,
+    TextInput: textInputConfig,
   },
 };

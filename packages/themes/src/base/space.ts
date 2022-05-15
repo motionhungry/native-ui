@@ -4,6 +4,7 @@ export type SpaceVariant =
   | 1
   | 1.5
   | 2
+  | 2.5
   | 3
   | 4
   | 5
@@ -21,6 +22,7 @@ export const space: Space = {
   1: 8,
   1.5: 12,
   2: 16,
+  2.5: 20,
   3: 24,
   4: 32,
   5: 40,

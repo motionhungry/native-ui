@@ -3,7 +3,6 @@ import React from 'react';
 import { Box, IconName } from '@motionhungry-ui/core';
 import { useTheme } from '@motionhungry-ui/hooks';
 import { radius } from '@motionhungry-ui/themes';
-import { useCallback } from 'react';
 
 import { Fab } from '../Fab';
 import { IconButton } from '../IconButton';
@@ -37,15 +36,6 @@ const TabBar = ({
     components: { TabBar: tabBarTheme },
   } = theme;
 
-  const getIconColor = (index: TabIndex) =>
-    useCallback(
-      () =>
-        index === activeIndex
-          ? tabBarTheme.iconColor.active
-          : tabBarTheme.iconColor.inactive,
-      [activeIndex]
-    );
-
   const borderRadius = radius[tabBarTheme.borderRadius];
 
   if (variant === 'fab') {
@@ -62,7 +52,6 @@ const TabBar = ({
           marginTop={20}
         >
           <IconButton
-            color={getIconColor(0)()}
             variant="tertiary"
             icon={icons[0]}
             onPress={() => {
@@ -70,7 +59,6 @@ const TabBar = ({
             }}
           />
           <IconButton
-            color={getIconColor(1)()}
             variant="tertiary"
             icon={icons[1]}
             onPress={() => {
@@ -101,7 +89,6 @@ const TabBar = ({
           marginTop={20}
         >
           <IconButton
-            color={getIconColor(3)()}
             variant="tertiary"
             icon={icons[3]}
             onPress={() => {
@@ -109,7 +96,6 @@ const TabBar = ({
             }}
           />
           <IconButton
-            color={getIconColor(4)()}
             variant="tertiary"
             icon={icons[4]}
             onPress={() => {
@@ -131,11 +117,9 @@ const TabBar = ({
       padding={2}
     >
       {icons.map((icon, index) => {
-        const iconColor = getIconColor(index as TabIndex)();
         return (
           <IconButton
             key={`tab-button-${index}`}
-            color={iconColor}
             variant="tertiary"
             icon={icon}
             onPress={() => {

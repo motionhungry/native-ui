@@ -25,12 +25,5 @@ export const defaultTheme: Theme = {
         },
       },
     },
-    TextInput: {
-      ...baseTheme.components.TextInput,
-      label: {
-        ...baseTheme.components.TextInput.label,
-        color: secondaryColor[100],
-      },
-    },
   },
 };

@@ -2,7 +2,7 @@ import { color } from '../base/color';
 
 export type TextSize = 'large' | 'medium' | 'small' | 'xsmall';
 
-export type FontWeight = 'regular' | 'medium' | 'semi-bold' |'bold';
+export type FontWeight = 'normal' | 'medium' | 'semi-bold' |'bold';
 
 export type FontSizeVariant = {
   fontSize: string;
@@ -41,7 +41,7 @@ export const textConfig: TextConfig = {
     },
   },
   fontWeight: {
-    regular: 'Poppins-Regular',
+    normal: 'Poppins-Regular',
     medium: 'Poppins-Medium',
     'semi-bold': 'Poppins-SemiBold',
     bold: 'Poppins-Bold',

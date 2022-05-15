@@ -1,7 +1,14 @@
-import React from 'react';
-import { Box, Typography } from '@motionhungry-ui/core';
+import React, { useRef, useState } from 'react';
+import { Box } from '@motionhungry-ui/core';
 import { useTheme } from '@motionhungry-ui/hooks';
-import { TextInputProps as RNTextInputProps } from 'react-native';
+import { TextInputState, TextInputSize } from '@motionhungry-ui/themes';
+import {
+  TextInput as TTextInput,
+  TextInputProps as RNTextInputProps,
+  TouchableWithoutFeedback,
+  NativeSyntheticEvent,
+  TextInputChangeEventData,
+} from 'react-native';
 import styled from 'styled-components/native';
 import {
   border,
@@ -16,6 +23,8 @@ import {
   TypographyProps,
   MarginProps,
 } from 'styled-system';
+
+import { Text } from '../Text';
 
 type NativeTextInputProps = BorderProps &
   ColorProps &
@@ -32,12 +41,24 @@ const NativeTextInput = styled.TextInput<NativeTextInputProps>`
 `;
 
 type TextInputProps = {
-  label?: string;
+  disabled?: boolean;
+  error?: boolean;
+  label: string;
+  size?: TextInputSize;
+  success?: boolean;
+  value?: string;
+  setValue: (val: string) => void;
 } & MarginProps &
   RNTextInputProps;
 
 const TextInput = ({
+  disabled = false,
+  error = false,
   label,
+  size = 'large',
+  success = false,
+  value = '',
+  setValue,
   m,
   margin,
   mt,
@@ -54,6 +75,8 @@ const TextInput = ({
   marginX,
   ...props
 }: TextInputProps): JSX.Element => {
+  const textInputRef = useRef<TTextInput>(null);
+  const [isFocused, setIsFocused] = useState(false);
   const theme = useTheme();
 
   const marginProps = Object.fromEntries(
@@ -75,28 +98,98 @@ const TextInput = ({
     }).filter(([key, value]) => !!value)
   );
 
+  const getInputState = (): TextInputState => {
+    if (error) return 'error';
+    if (success) return 'success';
+    if (disabled) return 'disabled';
+    if (isFocused) return 'active';
+    return 'inactive';
+  };
+
+  const handleChangeText = (
+    e: NativeSyntheticEvent<TextInputChangeEventData>
+  ): void => {
+    setValue(e.nativeEvent.text);
+  };
+
+  const handleFocus = () => {
+    setIsFocused(true);
+    textInputRef.current?.focus();
+  };
+
+  const handleBlur = () => {
+    console.log('blur');
+    setIsFocused(false);
+  };
+
+  const {
+    components: { TextInput: inputTheme, Text: textTheme },
+  } = theme;
+
+  const {
+    box: boxState,
+    labelColor,
+    textInputColor,
+  } = inputTheme.state[getInputState()];
+
+  const {
+    box: boxSize,
+    label: labelSize,
+    textInput: textInputSize,
+    placeholder: placeHolderSize,
+  } = inputTheme.size[size];
+
+  const textInputTextSize = textTheme.variant[textInputSize.size];
+  const textInputFontFamily = textTheme.fontWeight[textInputSize.fontWeight];
+
+  /**
+   * TODO: Android offset; move this logic into a util - talk to @kyleget
+   * This is the equivalent of 'calc(${textInputTextSize} - 5px)'
+   * But there were RN errors.
+   */
+  const lineHeightOffset = `${
+    parseInt(textInputTextSize.lineHeight.replace('px', '')) - 3
+  }px`;
+
   return (
-    <Box {...marginProps}>
-      {label && (
-        <Typography
-          color={theme.components.TextInput.label.color}
-          mb={0.5}
-          {...theme.components.TextInput.label.typography}
+    <TouchableWithoutFeedback onPress={!isFocused ? handleFocus : undefined}>
+      <Box
+        px={2.5}
+        justifyContent="center"
+        {...boxState}
+        {...boxSize}
+        {...marginProps}
+      >
+        <Text
+          color={labelColor}
+          size={isFocused || value ? labelSize.size : placeHolderSize.size}
+          fontWeight={
+            isFocused || value
+              ? labelSize.fontWeight
+              : placeHolderSize.fontWeight
+          }
         >
           {label}
-        </Typography>
-      )}
-      <NativeTextInput
-        backgroundColor={theme.components.TextInput.backgroundColor}
-        borderRadius={theme.components.TextInput.border.radius}
-        borderWidth={theme.components.TextInput.border.width}
-        borderColor={theme.components.TextInput.border.color}
-        color={theme.components.TextInput.color}
-        p={2}
-        {...theme.components.TextInput.typography}
-        {...props}
-      />
-    </Box>
+        </Text>
+        {isFocused ? (
+          <NativeTextInput
+            autoFocus
+            ref={textInputRef}
+            onBlur={handleBlur}
+            onChange={handleChangeText}
+            color={textInputColor}
+            fontFamily={textInputFontFamily}
+            {...textInputTextSize}
+            lineHeight={lineHeightOffset}
+            selectionColor={textInputColor}
+            value={value}
+            {...props}
+          />
+        ) : (
+          <>{!!value && <Text {...textInputSize}>{value}</Text>}</>
+        )}
+      </Box>
+    </TouchableWithoutFeedback>
   );
 };
 

@@ -1,16 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { SafeAreaView } from 'react-native';
 import { ThemeProvider } from 'styled-components/native';
 import { useFonts } from 'expo-font';
 
 import { defaultTheme } from '@motionhungry-ui/themes';
-import { Box, Button, Text } from '@motionhungry-ui/components';
+import { Box, Button, TextInput } from '@motionhungry-ui/components';
 
 const theme = defaultTheme;
 
 const Playground = () => {
+  const [value1, setValue1] = useState('');
+  const [value2, setValue2] = useState('');
   return (
-    <Button leftIcon="scan" label="Button" />
+    <>
+      <TextInput
+        label="Phone Number"
+        mb={1.5}
+        value={value1}
+        setValue={setValue1}
+      />
+      <TextInput
+        label="Phone Number"
+        mb={1.5}
+        value={value2}
+        setValue={setValue2}
+      />
+      <Button size="large" leftIcon="scan" label="Button" />
+    </>
   );
 };
 

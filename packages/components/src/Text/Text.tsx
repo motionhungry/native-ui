@@ -14,7 +14,7 @@ type TextProps = {
 const Text = ({
   color,
   children,
-  fontWeight = 'regular',
+  fontWeight = 'normal',
   size = 'medium',
   textAlign = 'left',
 }: TextProps): JSX.Element => {
