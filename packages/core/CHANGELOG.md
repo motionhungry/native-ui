@@ -1,5 +1,12 @@
 # @motionhungry-ui/core
 
+## 0.0.8
+
+### Patch Changes
+
+- 0445f7d: Added several new components
+- 0445f7d: BREAKING CHANGE: Add Text and Headline Components; renamed @motionhungry-ui/core/Text to Typography
+
 ## 0.0.7
 
 ### Patch Changes
