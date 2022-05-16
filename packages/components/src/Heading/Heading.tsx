@@ -1,4 +1,5 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
+import { TextProps } from 'react-native';
 import { MarginProps } from 'styled-system';
 import { Typography } from '@motionhungry-ui/core';
 import { useTheme } from '@motionhungry-ui/hooks';
@@ -7,7 +8,7 @@ import { HeadingSize } from '@motionhungry-ui/themes';
 type HeadingProps = {
   size: HeadingSize;
   textAlign?: 'left' | 'center' | 'right';
-  children: ReactNode;
+  children: TextProps['children'];
 } & MarginProps;
 
 const Heading = ({
