@@ -3,27 +3,21 @@ import React from 'react';
 import { Ionicons } from '@expo/vector-icons';
 import { TouchableOpacity, IconName } from '@motionhungry-ui/core';
 import { useTheme } from '@motionhungry-ui/hooks';
-import {
-  ButtonSize,
-  ButtonVariant,
-  ButtonColorOption,
-} from '@motionhungry-ui/themes';
+import { IconButtonSize, IconButtonVariant } from '@motionhungry-ui/themes';
 import { MarginProps } from 'styled-system';
 
 type IconButtonProps = {
-  color?: ButtonColorOption | string;
   disabled?: boolean;
   icon: IconName;
-  size?: ButtonSize;
-  variant?: ButtonVariant;
+  size?: IconButtonSize;
+  variant?: IconButtonVariant;
   onPress: () => void;
 } & MarginProps;
 
 const IconButton = ({
-  color = 'primary',
   disabled = false,
   icon,
-  size = 'default',
+  size = 'large',
   variant = 'primary',
   onPress,
   ...props
@@ -33,59 +27,20 @@ const IconButton = ({
     components: { IconButton: buttonTheme },
   } = theme;
 
-  const variantTheme = buttonTheme[variant];
-
-  const opacity = disabled ? variantTheme.disabledOpacity : 100;
-
-  const backgroundColor = (() => {
-    if (variantTheme.backgroundColor) {
-      return variantTheme.backgroundColor;
-    }
-    if (variant === 'primary') {
-      return theme.color[color][opacity];
-    }
-    return undefined;
-  })();
-
-  const borderColor = (() => {
-    if (variantTheme.borderWidth > 0) {
-      return theme.color[color][opacity];
-    }
-    return undefined;
-  })();
-
-  const labelColor = (() => {
-    if (variantTheme.labelColor) {
-      return variantTheme.labelColor[opacity];
-    }
-    return theme.color[color][opacity];
-  })();
+  const { box: boxVariant, iconColor } = buttonTheme.variant[variant];
+  const { box: boxSize, iconSize } = buttonTheme.size[size];
 
   return (
     <TouchableOpacity
-      backgroundColor={backgroundColor}
-      borderColor={borderColor}
-      borderRadius={variantTheme.borderRadius}
-      borderWidth={variantTheme.borderWidth}
       disabled={disabled}
       justifyContent="center"
       alignItems="center"
-      height={
-        size === 'default'
-          ? buttonTheme.height.default
-          : buttonTheme.height.small
-      }
       onPress={onPress}
-      width={
-        size === 'default' ? buttonTheme.width.default : buttonTheme.width.small
-      }
+      {...boxVariant}
+      {...boxSize}
       {...props}
     >
-      <Ionicons
-        name={icon}
-        size={buttonTheme.iconSize[size]}
-        color={labelColor}
-      />
+      <Ionicons name={icon} size={iconSize} color={iconColor} />
     </TouchableOpacity>
   );
 };

@@ -1,83 +1,74 @@
 import React from 'react';
 
-import { TouchableOpacity, Text } from '@motionhungry-ui/core';
+import { Ionicons } from '@expo/vector-icons';
+import { Box, TouchableOpacity, IconName } from '@motionhungry-ui/core';
 import { useTheme } from '@motionhungry-ui/hooks';
-import {
-  ButtonSize,
-  ButtonVariant,
-  ButtonColorOption,
-} from '@motionhungry-ui/themes';
+import { ButtonSize, ButtonVariant } from '@motionhungry-ui/themes';
 import { MarginProps } from 'styled-system';
 
+import { Text } from '../Text';
+
 type ButtonProps = {
-  color?: ButtonColorOption;
   disabled?: boolean;
   label: string;
+  leftIcon?: IconName;
+  rightIcon?: IconName;
   size?: ButtonSize;
   variant?: ButtonVariant;
-  onPress: () => void;
+  onPress?: () => void;
 } & MarginProps;
 
 export const Button = ({
-  color = 'primary',
   disabled = false,
   label,
-  size = 'default',
+  leftIcon,
+  rightIcon,
+  size = 'large',
   variant = 'primary',
-  onPress,
+  onPress = () => {},
   ...props
 }: ButtonProps): JSX.Element => {
   const theme = useTheme();
   const {
     components: { Button: buttonTheme },
   } = theme;
-  const variantTheme = buttonTheme[variant];
 
-  const opacity = disabled ? variantTheme.disabledOpacity : 100;
-
-  const backgroundColor = (() => {
-    if (variantTheme.backgroundColor) {
-      return variantTheme.backgroundColor;
-    }
-    if (variant === 'primary') {
-      return theme.color[color][opacity];
-    }
-    return undefined;
-  })();
-
-  const borderColor = (() => {
-    if (variantTheme.borderWidth > 0) {
-      return theme.color[color][opacity];
-    }
-    return undefined;
-  })();
-
-  const labelColor = (() => {
-    if (variantTheme.labelColor) {
-      return variantTheme.labelColor[opacity];
-    }
-    return theme.color[color][opacity];
-  })();
+  const { box: boxVariant, label: labelVariant } = buttonTheme.variant[variant];
+  const { box: boxSize, label: labelSize, iconSize } = buttonTheme.size[size];
 
   return (
     <TouchableOpacity
-      backgroundColor={backgroundColor}
-      borderColor={borderColor}
-      borderRadius={variantTheme.borderRadius}
-      borderWidth={variantTheme.borderWidth}
       disabled={disabled}
       justifyContent="center"
-      height={
-        size === 'default'
-          ? buttonTheme.height.default
-          : buttonTheme.height.small
-      }
+      alignItems="center"
       onPress={onPress}
+      {...boxSize}
+      {...boxVariant}
       {...props}
     >
-      <Text color={labelColor} {...buttonTheme.typeVariant}>
-        {label}
-      </Text>
+      <Box flexDirection="row">
+        {leftIcon && (
+          <Box mr={1.5}>
+            <Ionicons
+              name={leftIcon}
+              size={iconSize}
+              color={labelVariant.color}
+            />
+          </Box>
+        )}
+        <Text textAlign="center" {...labelSize} {...labelVariant}>
+          {label}
+        </Text>
+        {rightIcon && (
+          <Box ml={1.5}>
+            <Ionicons
+              name={rightIcon}
+              size={iconSize}
+              color={labelVariant.color}
+            />
+          </Box>
+        )}
+      </Box>
     </TouchableOpacity>
   );
 };

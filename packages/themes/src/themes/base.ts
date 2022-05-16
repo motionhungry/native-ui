@@ -5,21 +5,27 @@ import {
   Radius,
   space,
   Space,
-  typography,
-  Typography,
 } from '../base';
 
 import {
-  button,
-  Button,
+  buttonConfig,
+  ButtonConfig,
   fab,
   Fab,
-  iconButton,
-  IconButton,
+  heading,
+  Heading,
+  iconButtonConfig,
+  IconButtonConfig,
+  listItemConfig,
+  ListItemConfig,
   TabBar,
   tabBar,
-  TextInput,
-  textInput,
+  textConfig,
+  TextConfig,
+  titleConfig,
+  TitleConfig,
+  InputConfig,
+  inputConfig,
 } from '../components';
 
 export type Theme = {
@@ -27,13 +33,16 @@ export type Theme = {
   color: Color;
   radius: Radius;
   space: Space;
-  typography: Typography;
   components: {
-    Button: Button;
+    Button: ButtonConfig;
     Fab: Fab;
-    IconButton: IconButton;
+    Heading: Heading;
+    IconButton: IconButtonConfig;
+    ListItem: ListItemConfig;
     TabBar: TabBar;
-    TextInput: TextInput;
+    Text: TextConfig;
+    Title: TitleConfig;
+    Input: InputConfig;
   };
 };
 
@@ -42,12 +51,15 @@ export const baseTheme: Theme = {
   color,
   radius,
   space,
-  typography,
   components: {
-    Button: button,
+    Button: buttonConfig,
     Fab: fab,
-    IconButton: iconButton,
+    Heading: heading,
+    IconButton: iconButtonConfig,
+    ListItem: listItemConfig,
     TabBar: tabBar,
-    TextInput: textInput,
+    Text: textConfig,
+    Title: titleConfig,
+    Input: inputConfig,
   },
 };

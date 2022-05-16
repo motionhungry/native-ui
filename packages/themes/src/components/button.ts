@@ -1,84 +1,99 @@
-import { ColorOpacity, color } from '../base/color';
+import { color } from '../base/color';
 import { radius } from '../base/radius';
-import { typography, TypeVariantSetting } from '../base/typography';
+import { textConfig, FontSizeVariant } from './text';
+
+export type ButtonSize = 'xlarge' | 'large' | 'medium' | 'small';
 
 export type ButtonVariant = 'primary' | 'secondary' | 'tertiary';
 
-export type ButtonSize = 'default' | 'small';
-
-export type ButtonColorOption = 'primary' | 'secondary';
-
-export type ButtonColor = Record<ButtonColorOption, ColorOpacity>;
-
-export type ButtonVariantSetting = {
-  backgroundColor?: string;
-  borderColor?: string;
-  borderRadius: number;
-  borderWidth: number;
-  color?: ButtonColor | string;
-  disabledOpacity: keyof ColorOpacity;
-  labelColor?: ColorOpacity;
+type ButtonSizeConfig = {
+  box: {
+    height: string;
+    borderRadius: string;
+  };
+  label: FontSizeVariant;
+  iconSize: number;
 };
 
-type BaseButton = {
-  height: Record<ButtonSize, number>;
-  typeVariant: TypeVariantSetting;
+type ButtonVariantConfig = {
+  box: {
+    backgroundColor?: string;
+    borderColor?: string;
+    borderWidth?: string;
+  };
+  label: {
+    color: string;
+  };
 };
 
-export interface Button
-  extends BaseButton,
-    Record<ButtonVariant, ButtonVariantSetting> {
-  primary: ButtonVariantSetting;
-  secondary: ButtonVariantSetting;
-  tertiary: ButtonVariantSetting;
-}
-
-export const button: Button = {
-  height: {
-    default: 48,
-    small: 32,
-  },
-  primary: {
-    borderRadius: radius.small,
-    borderWidth: 0,
-    disabledOpacity: 50,
-    labelColor: color.white,
-  },
-  secondary: {
-    borderRadius: radius.small,
-    borderWidth: 2,
-    disabledOpacity: 50,
-  },
-  tertiary: {
-    borderRadius: radius.small,
-    borderWidth: 0,
-    disabledOpacity: 50,
-  },
-  typeVariant: typography.buttonText,
+export type ButtonConfig = {
+  size: Record<ButtonSize, ButtonSizeConfig>;
+  variant: Record<ButtonVariant, ButtonVariantConfig>;
 };
 
-type BaseIconButton = {
-  height: Record<ButtonSize, number>;
-  iconSize: Record<ButtonSize, number>;
-  width: Record<ButtonSize, number>;
-};
+const styleLabel = (variant: FontSizeVariant): FontSizeVariant => ({
+  ...variant,
+  fontWeight: 'semi-bold',
+});
 
-export interface IconButton
-  extends BaseIconButton,
-    Record<ButtonVariant, ButtonVariantSetting> {
-  primary: ButtonVariantSetting;
-  secondary: ButtonVariantSetting;
-  tertiary: ButtonVariantSetting;
-}
-
-export const iconButton: IconButton = {
-  height: { ...button.height },
-  iconSize: {
-    default: 32,
-    small: 24,
+export const buttonConfig = {
+  size: {
+    xlarge: {
+      box: {
+        height: '72px',
+        borderRadius: radius.large,
+      },
+      label: styleLabel(textConfig.variant.medium),
+      iconSize: 24,
+    },
+    large: {
+      box: {
+        height: '64px',
+        borderRadius: radius.medium,
+      },
+      label: styleLabel(textConfig.variant.small),
+      iconSize: 24,
+    },
+    medium: {
+      box: {
+        height: '56px',
+        borderRadius: radius.medium,
+      },
+      label: styleLabel(textConfig.variant.small),
+      iconSize: 24,
+    },
+    small: {
+      box: {
+        height: '40px',
+        borderRadius: radius.small,
+      },
+      label: styleLabel(textConfig.variant.xsmall),
+      iconSize: 24,
+    },
   },
-  primary: { ...button.primary },
-  secondary: { ...button.secondary },
-  tertiary: { ...button.tertiary },
-  width: { ...button.height },
+  variant: {
+    primary: {
+      box: {
+        backgroundColor: color.black[100],
+      },
+      label: {
+        color: color.white[100],
+      },
+    },
+    secondary: {
+      box: {
+        borderWidth: '2px',
+        borderColor: color.black[100],
+      },
+      label: {
+        color: color.black[100],
+      },
+    },
+    tertiary: {
+      box: {},
+      label: {
+        color: color.black[100],
+      },
+    },
+  },
 };
