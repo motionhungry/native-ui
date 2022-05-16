@@ -62,6 +62,12 @@ export const pegasusTheme: Theme = {
         },
       },
     },
+    Fab: {
+      ...baseTheme.components.Fab,
+      backgroundColor: primaryColor[100],
+      iconColor: grayscale.offwhite,
+      shadowColor: `${grayscale.offblack}25`,
+    },
     Input: {
       ...baseTheme.components.Input,
       state: {
@@ -129,6 +135,21 @@ export const pegasusTheme: Theme = {
           icon: {
             color: grayscale.label,
           },
+        },
+      },
+    },
+    TabBar: {
+      ...baseTheme.components.TabBar,
+      box: {
+        ...baseTheme.components.TabBar.box,
+        backgroundColor: grayscale.bg,
+      },
+      tabState: {
+        active: {
+          iconColor: primaryColor[100],
+        },
+        inactive: {
+          iconColor: grayscale.label,
         },
       },
     },
