@@ -6,6 +6,7 @@ type ListItemState = 'default' | 'selected';
 
 export type ListItemConfig = {
   box: {
+    paddingX: SpaceVariant;
     paddingY: SpaceVariant;
   };
   labelSize: TextSize;
@@ -25,6 +26,7 @@ export type ListItemConfig = {
 
 export const listItemConfig: ListItemConfig = {
   box: {
+    paddingX: 3,
     paddingY: 1,
   },
   labelSize: 'large',

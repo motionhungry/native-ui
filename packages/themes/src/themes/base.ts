@@ -10,6 +10,8 @@ import {
 import {
   buttonConfig,
   ButtonConfig,
+  containerConfig,
+  ContainerConfig,
   fab,
   Fab,
   heading,
@@ -35,6 +37,7 @@ export type Theme = {
   space: Space;
   components: {
     Button: ButtonConfig;
+    Container: ContainerConfig;
     Fab: Fab;
     Heading: Heading;
     IconButton: IconButtonConfig;
@@ -53,6 +56,7 @@ export const baseTheme: Theme = {
   space,
   components: {
     Button: buttonConfig,
+    Container: containerConfig,
     Fab: fab,
     Heading: heading,
     IconButton: iconButtonConfig,
