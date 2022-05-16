@@ -1,5 +1,11 @@
 # @motionhungry-ui/components
 
+## 0.0.13
+
+### Patch Changes
+
+- a75b4bc: Fixes to TypeScript compilation errors
+
 ## 0.0.12
 
 ### Patch Changes
