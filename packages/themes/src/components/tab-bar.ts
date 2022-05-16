@@ -1,31 +1,37 @@
-import { Color, color, ColorOpacity } from '../base/color';
+import { color } from '../base';
 import { BorderRadiusVariant } from '../base/radius';
+import { SpaceVariant } from '../base/space';
 
-export type ActiveIconButtonColor = ColorOpacity;
-export type InactiveIconButtonColor = ColorOpacity;
-
-export type TabBar = {
-  backgroundColor: string;
-  borderRadius: BorderRadiusVariant;
-  iconColor: {
-    active: keyof Color;
-    inactive: keyof Color;
+export type TabBarConfig = {
+  box: {
+    backgroundColor: string;
+    borderRadius: BorderRadiusVariant;
   };
-  iconOpacity: {
-    active: keyof ColorOpacity;
-    inactive: keyof ColorOpacity;
+  iconSize: number;
+  iconPadding: SpaceVariant;
+  tabState: {
+    active: {
+      iconColor: string;
+    };
+    inactive: {
+      iconColor: string;
+    };
   };
 };
 
-export const tabBar: TabBar = {
-  backgroundColor: color.concrete[100],
-  borderRadius: 'xlarge',
-  iconColor: {
-    active: 'secondary',
-    inactive: 'shale',
+export const tabBarConfig: TabBarConfig = {
+  box: {
+    backgroundColor: color.shale[25],
+    borderRadius: 'xlarge',
   },
-  iconOpacity: {
-    active: 100,
-    inactive: 100,
+  iconSize: 32,
+  iconPadding: 1,
+  tabState: {
+    active: {
+      iconColor: color.black[100],
+    },
+    inactive: {
+      iconColor: color.shale[100],
+    },
   },
 };

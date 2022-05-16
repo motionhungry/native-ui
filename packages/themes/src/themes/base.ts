@@ -20,8 +20,8 @@ import {
   IconButtonConfig,
   listItemConfig,
   ListItemConfig,
-  TabBar,
-  tabBar,
+  TabBarConfig,
+  tabBarConfig,
   textConfig,
   TextConfig,
   titleConfig,
@@ -42,7 +42,7 @@ export type Theme = {
     Heading: Heading;
     IconButton: IconButtonConfig;
     ListItem: ListItemConfig;
-    TabBar: TabBar;
+    TabBar: TabBarConfig;
     Text: TextConfig;
     Title: TitleConfig;
     Input: InputConfig;
@@ -61,7 +61,7 @@ export const baseTheme: Theme = {
     Heading: heading,
     IconButton: iconButtonConfig,
     ListItem: listItemConfig,
-    TabBar: tabBar,
+    TabBar: tabBarConfig,
     Text: textConfig,
     Title: titleConfig,
     Input: inputConfig,

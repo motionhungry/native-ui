@@ -19,7 +19,7 @@ export const Fab = ({ icon, onPress }: FabProps) => {
   return (
     <TouchableOpacity
       alignItems="center"
-      backgroundColor={theme.color[fabTheme.backgroundColor][100]}
+      backgroundColor={fabTheme.backgroundColor}
       borderRadius={30}
       boxShadow={`0px 2px 2px ${fabTheme.shadowColor}`}
       height={60}
