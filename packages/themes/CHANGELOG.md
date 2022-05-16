@@ -1,5 +1,11 @@
 # @motionhungry-ui/themes
 
+## 0.0.14
+
+### Patch Changes
+
+- 23af126: Reverted package upgrades
+
 ## 0.0.13
 
 ### Patch Changes
