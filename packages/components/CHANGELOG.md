@@ -1,5 +1,13 @@
 # @motionhungry-ui/components
 
+## 0.0.16
+
+### Patch Changes
+
+- 23af126: Reverted package upgrades
+- Updated dependencies [23af126]
+  - @motionhungry-ui/themes@0.0.14
+
 ## 0.0.15
 
 ### Patch Changes
