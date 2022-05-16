@@ -60,6 +60,24 @@ export const pegasusTheme: Theme = {
             backgroundColor: primaryColor[100],
           },
         },
+        secondary: {
+          ...baseTheme.components.Button.variant.secondary,
+          box: {
+            ...baseTheme.components.Button.variant.secondary.box,
+            borderColor: primaryColor[100],
+          },
+          label: {
+            ...baseTheme.components.Button.variant.secondary.label,
+            color: primaryColor[100],
+          },
+        },
+        tertiary: {
+          ...baseTheme.components.Button.variant.tertiary,
+          label: {
+            ...baseTheme.components.Button.variant.tertiary.label,
+            color: primaryColor[100],
+          },
+        },
       },
     },
     Fab: {
