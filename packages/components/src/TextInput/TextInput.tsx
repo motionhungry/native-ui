@@ -118,6 +118,13 @@ const TextInput = ({
     setIsFocused(false);
   };
 
+  const renderInactiveValue = () => {
+    if (!!props.secureTextEntry) {
+      return Array(value.length).fill('●').join('');
+    }
+    return value;
+  };
+
   const {
     components: { Input: inputTheme, Text: textTheme },
   } = theme;
@@ -185,7 +192,7 @@ const TextInput = ({
           <>
             {!!value && (
               <Text color={inputColor} {...inputSize}>
-                {value}
+                {renderInactiveValue()}
               </Text>
             )}
           </>
