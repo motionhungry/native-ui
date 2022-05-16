@@ -1,5 +1,14 @@
 # @motionhungry-ui/components
 
+## 0.0.14
+
+### Patch Changes
+
+- 1772ef0: Add password entry to TextInput
+- 1772ef0: Add container component
+- Updated dependencies [1772ef0]
+  - @motionhungry-ui/themes@0.0.12
+
 ## 0.0.13
 
 ### Patch Changes
