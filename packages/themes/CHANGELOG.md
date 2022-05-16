@@ -1,5 +1,11 @@
 # @motionhungry-ui/themes
 
+## 0.0.12
+
+### Patch Changes
+
+- 1772ef0: Add container component
+
 ## 0.0.11
 
 ### Patch Changes
