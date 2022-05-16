@@ -112,6 +112,26 @@ export const pegasusTheme: Theme = {
         },
       },
     },
+    ListItem: {
+      ...baseTheme.components.ListItem,
+      state: {
+        ...baseTheme.components.ListItem.state,
+        selected: {
+          box: {
+            backgroundColor: primaryColor[25],
+          },
+          icon: {
+            color: primaryColor[100],
+          },
+        },
+        default: {
+          box: {},
+          icon: {
+            color: grayscale.label,
+          },
+        },
+      },
+    },
     Text: {
       ...baseTheme.components.Text,
       defaultColor: grayscale.offblack,
