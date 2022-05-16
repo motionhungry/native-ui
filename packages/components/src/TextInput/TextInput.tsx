@@ -1,11 +1,10 @@
 import React, { useRef, useState } from 'react';
-import { Box } from '@motionhungry-ui/core';
+import { Box, TouchableOpacity } from '@motionhungry-ui/core';
 import { useTheme } from '@motionhungry-ui/hooks';
-import { TextInputState, TextInputSize } from '@motionhungry-ui/themes';
+import { InputState, InputSize } from '@motionhungry-ui/themes';
 import {
   TextInput as TTextInput,
   TextInputProps as RNTextInputProps,
-  TouchableWithoutFeedback,
   NativeSyntheticEvent,
   TextInputChangeEventData,
 } from 'react-native';
@@ -44,7 +43,7 @@ type TextInputProps = {
   disabled?: boolean;
   error?: boolean;
   label: string;
-  size?: TextInputSize;
+  size?: InputSize;
   success?: boolean;
   value?: string;
   setValue: (val: string) => void;
@@ -98,7 +97,7 @@ const TextInput = ({
     }).filter(([key, value]) => !!value)
   );
 
-  const getInputState = (): TextInputState => {
+  const getInputState = (): InputState => {
     if (error) return 'error';
     if (success) return 'success';
     if (disabled) return 'disabled';
@@ -123,24 +122,24 @@ const TextInput = ({
   };
 
   const {
-    components: { TextInput: inputTheme, Text: textTheme },
+    components: { Input: inputTheme, Text: textTheme },
   } = theme;
 
   const {
     box: boxState,
     labelColor,
-    textInputColor,
+    inputColor,
   } = inputTheme.state[getInputState()];
 
   const {
     box: boxSize,
     label: labelSize,
-    textInput: textInputSize,
+    input: inputSize,
     placeholder: placeHolderSize,
   } = inputTheme.size[size];
 
-  const textInputTextSize = textTheme.variant[textInputSize.size];
-  const textInputFontFamily = textTheme.fontWeight[textInputSize.fontWeight];
+  const textInputTextSize = textTheme.variant[inputSize.size];
+  const textInputFontFamily = textTheme.fontWeight[inputSize.fontWeight];
 
   /**
    * TODO: Android offset; move this logic into a util - talk to @kyleget
@@ -152,7 +151,7 @@ const TextInput = ({
   }px`;
 
   return (
-    <TouchableWithoutFeedback onPress={!isFocused ? handleFocus : undefined}>
+    <TouchableOpacity onPress={!isFocused ? handleFocus : undefined}>
       <Box
         px={2.5}
         justifyContent="center"
@@ -177,19 +176,25 @@ const TextInput = ({
             ref={textInputRef}
             onBlur={handleBlur}
             onChange={handleChangeText}
-            color={textInputColor}
+            color={inputColor}
             fontFamily={textInputFontFamily}
             {...textInputTextSize}
             lineHeight={lineHeightOffset}
-            selectionColor={textInputColor}
+            selectionColor={inputColor}
             value={value}
             {...props}
           />
         ) : (
-          <>{!!value && <Text {...textInputSize}>{value}</Text>}</>
+          <>
+            {!!value && (
+              <Text color={inputColor} {...inputSize}>
+                {value}
+              </Text>
+            )}
+          </>
         )}
       </Box>
-    </TouchableWithoutFeedback>
+    </TouchableOpacity>
   );
 };
 

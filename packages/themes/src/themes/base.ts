@@ -16,12 +16,16 @@ import {
   Heading,
   iconButtonConfig,
   IconButtonConfig,
+  listItemConfig,
+  ListItemConfig,
   TabBar,
   tabBar,
   textConfig,
   TextConfig,
-  TextInputConfig,
-  textInputConfig,
+  titleConfig,
+  TitleConfig,
+  InputConfig,
+  inputConfig,
 } from '../components';
 
 export type Theme = {
@@ -34,9 +38,11 @@ export type Theme = {
     Fab: Fab;
     Heading: Heading;
     IconButton: IconButtonConfig;
+    ListItem: ListItemConfig;
     TabBar: TabBar;
     Text: TextConfig;
-    TextInput: TextInputConfig;
+    Title: TitleConfig;
+    Input: InputConfig;
   };
 };
 
@@ -50,8 +56,10 @@ export const baseTheme: Theme = {
     Fab: fab,
     Heading: heading,
     IconButton: iconButtonConfig,
+    ListItem: listItemConfig,
     TabBar: tabBar,
     Text: textConfig,
-    TextInput: textInputConfig,
+    Title: titleConfig,
+    Input: inputConfig,
   },
 };

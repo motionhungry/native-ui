@@ -42,6 +42,7 @@ const secondaryColor = color.miamiLights;
 
 export const pegasusTheme: Theme = {
   ...baseTheme,
+  backgroundColor: grayscale.offwhite,
   color: {
     ...color,
     primary: primaryColor,
@@ -61,8 +62,8 @@ export const pegasusTheme: Theme = {
         },
       },
     },
-    TextInput: {
-      ...baseTheme.components.TextInput,
+    Input: {
+      ...baseTheme.components.Input,
       state: {
         inactive: {
           box: {
@@ -71,7 +72,7 @@ export const pegasusTheme: Theme = {
             borderWidth: '2px',
           },
           labelColor: grayscale.label,
-          textInputColor: grayscale.offblack,
+          inputColor: grayscale.offblack,
         },
         active: {
           box: {
@@ -80,7 +81,7 @@ export const pegasusTheme: Theme = {
             borderWidth: '2px',
           },
           labelColor: grayscale.label,
-          textInputColor: grayscale.offblack,
+          inputColor: grayscale.offblack,
         },
         disabled: {
           box: {
@@ -89,7 +90,7 @@ export const pegasusTheme: Theme = {
             borderWidth: '2px',
           },
           labelColor: grayscale.inputDisabled,
-          textInputColor: grayscale.inputDisabled,
+          inputColor: grayscale.inputDisabled,
         },
         error: {
           box: {
@@ -98,7 +99,7 @@ export const pegasusTheme: Theme = {
             borderWidth: '2px',
           },
           labelColor: error.dark,
-          textInputColor: grayscale.offblack,
+          inputColor: grayscale.offblack,
         },
         success: {
           box: {
@@ -107,7 +108,55 @@ export const pegasusTheme: Theme = {
             borderWidth: '2px',
           },
           labelColor: success.dark,
-          textInputColor: grayscale.offblack,
+          inputColor: grayscale.offblack,
+        },
+      },
+    },
+    Text: {
+      ...baseTheme.components.Text,
+      defaultColor: grayscale.offblack,
+    },
+    Title: {
+      ...baseTheme.components.Title,
+      large: {
+        ...baseTheme.components.Title.large,
+        box: {
+          ...baseTheme.components.Title.large.box,
+          backgroundColor: grayscale.bg,
+        },
+        label: {
+          ...baseTheme.components.Title.large.label,
+          color: primaryColor[100],
+        },
+        icon: {
+          ...baseTheme.components.Title.large.icon,
+          color: grayscale.offblack,
+        },
+      },
+      medium: {
+        ...baseTheme.components.Title.medium,
+        box: {
+          ...baseTheme.components.Title.medium.box,
+          backgroundColor: grayscale.bg,
+        },
+        label: {
+          ...baseTheme.components.Title.large.label,
+          color: primaryColor[100],
+        },
+        icon: {
+          ...baseTheme.components.Title.large.icon,
+          color: grayscale.offblack,
+        },
+      },
+      small: {
+        ...baseTheme.components.Title.small,
+        label: {
+          ...baseTheme.components.Title.large.label,
+          color: primaryColor[100],
+        },
+        icon: {
+          ...baseTheme.components.Title.large.icon,
+          color: grayscale.offblack,
         },
       },
     },

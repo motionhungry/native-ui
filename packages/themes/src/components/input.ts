@@ -2,16 +2,16 @@ import { color } from '../base/color';
 import { radius } from '../base/radius';
 import { FontWeight, TextSize } from './text';
 
-export type TextInputSize = 'large' | 'small';
+export type InputSize = 'large' | 'small';
 
-export type TextInputState =
+export type InputState =
   | 'active'
   | 'inactive'
   | 'disabled'
   | 'error'
   | 'success';
 
-type TextInputSizeConfig = {
+type InputSizeConfig = {
   box: {
     height: string;
     borderRadius: string;
@@ -20,7 +20,7 @@ type TextInputSizeConfig = {
     size: TextSize;
     fontWeight: FontWeight;
   };
-  textInput: {
+  input: {
     size: TextSize;
     fontWeight: FontWeight;
   };
@@ -31,22 +31,22 @@ type TextInputSizeConfig = {
   iconSize: number;
 };
 
-type TextInputStateConfig = {
+type InputStateConfig = {
   box: {
     backgroundColor?: string;
     borderColor?: string;
     borderWidth?: string;
   };
   labelColor: string;
-  textInputColor: string;
+  inputColor: string;
 };
 
-export type TextInputConfig = {
-  size: Record<TextInputSize, TextInputSizeConfig>;
-  state: Record<TextInputState, TextInputStateConfig>;
+export type InputConfig = {
+  size: Record<InputSize, InputSizeConfig>;
+  state: Record<InputState, InputStateConfig>;
 };
 
-export const textInputConfig: TextInputConfig = {
+export const inputConfig: InputConfig = {
   size: {
     large: {
       box: {
@@ -57,7 +57,7 @@ export const textInputConfig: TextInputConfig = {
         size: 'xsmall',
         fontWeight: 'medium',
       },
-      textInput: {
+      input: {
         size: 'small',
         fontWeight: 'normal',
       },
@@ -76,7 +76,7 @@ export const textInputConfig: TextInputConfig = {
         size: 'xsmall',
         fontWeight: 'medium',
       },
-      textInput: {
+      input: {
         size: 'small',
         fontWeight: 'normal',
       },
@@ -95,7 +95,7 @@ export const textInputConfig: TextInputConfig = {
         borderWidth: '2px',
       },
       labelColor: color.shale[100],
-      textInputColor: color.black[100],
+      inputColor: color.black[100],
     },
     active: {
       box: {
@@ -104,7 +104,7 @@ export const textInputConfig: TextInputConfig = {
         borderWidth: '2px',
       },
       labelColor: color.shale[100],
-      textInputColor: color.black[100],
+      inputColor: color.black[100],
     },
     disabled: {
       box: {
@@ -113,7 +113,7 @@ export const textInputConfig: TextInputConfig = {
         borderWidth: '2px',
       },
       labelColor: color.shale[75],
-      textInputColor: color.shale[100],
+      inputColor: color.shale[100],
     },
     error: {
       box: {
@@ -122,7 +122,7 @@ export const textInputConfig: TextInputConfig = {
         borderWidth: '2px',
       },
       labelColor: color.sangre[100],
-      textInputColor: color.black[100],
+      inputColor: color.black[100],
     },
     success: {
       box: {
@@ -131,7 +131,7 @@ export const textInputConfig: TextInputConfig = {
         borderWidth: '2px',
       },
       labelColor: color.highlander[100],
-      textInputColor: color.black[100],
+      inputColor: color.black[100],
     },
   },
 };

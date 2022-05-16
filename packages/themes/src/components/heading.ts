@@ -1,4 +1,4 @@
-type HeadingSize = 1 | 2 | 3 | 4;
+export type HeadingSize = 'xlarge' | 'large' | 'medium' | 'small';
 
 type TypeVariant = {
   fontFamily: string;
@@ -11,28 +11,28 @@ type TypeVariant = {
 export type Heading = Record<HeadingSize, TypeVariant>;
 
 export const heading: Heading = {
-  1: {
+  xlarge: {
     fontFamily: 'Poppins-Bold',
     fontSize: '34px',
     fontWeight: 'bold',
     lineHeight: '48px',
     letterSpacing: '1px',
   },
-  2: {
+  large: {
     fontFamily: 'Poppins-Bold',
     fontSize: '28px',
     fontWeight: 'bold',
     lineHeight: '40px',
     letterSpacing: '1px',
   },
-  3: {
+  medium: {
     fontFamily: 'Poppins-Bold',
     fontSize: '24px',
     fontWeight: 'bold',
     lineHeight: '34px',
     letterSpacing: '1px',
   },
-  4: {
+  small: {
     fontFamily: 'Poppins-Bold',
     fontSize: '20px',
     fontWeight: 'bold',
