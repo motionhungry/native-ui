@@ -1,5 +1,11 @@
 # @motionhungry-ui/themes
 
+## 0.0.13
+
+### Patch Changes
+
+- e3979b8: Fix TabBar styling
+
 ## 0.0.12
 
 ### Patch Changes
