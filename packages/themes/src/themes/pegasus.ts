@@ -42,7 +42,7 @@ const secondaryColor = color.miamiLights;
 
 export const pegasusTheme: Theme = {
   ...baseTheme,
-  backgroundColor: grayscale.offwhite,
+  backgroundColor: color.white[100],
   color: {
     ...color,
     primary: primaryColor,
@@ -83,7 +83,7 @@ export const pegasusTheme: Theme = {
     Fab: {
       ...baseTheme.components.Fab,
       backgroundColor: primaryColor[100],
-      iconColor: grayscale.offwhite,
+      iconColor: color.white[100],
       shadowColor: `${grayscale.offblack}25`,
     },
     Input: {
@@ -100,7 +100,7 @@ export const pegasusTheme: Theme = {
         },
         active: {
           box: {
-            backgroundColor: grayscale.offwhite,
+            backgroundColor: color.white[100],
             borderColor: grayscale.offblack,
             borderWidth: '2px',
           },
