@@ -1,9 +1,8 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { Box, TouchableOpacity } from '@motionhungry-ui/core';
 import { useTheme } from '@motionhungry-ui/hooks';
 import { InputState, InputSize } from '@motionhungry-ui/themes';
 import {
-  TextInput as TTextInput,
   TextInputProps as RNTextInputProps,
   NativeSyntheticEvent,
   TextInputChangeEventData,
@@ -48,7 +47,7 @@ type TextInputProps = {
   value?: string;
   setValue: (val: string) => void;
 } & MarginProps &
-  RNTextInputProps;
+  Omit<RNTextInputProps, 'accessibilityRole'>;
 
 const TextInput = ({
   disabled = false,
@@ -74,7 +73,6 @@ const TextInput = ({
   marginX,
   ...props
 }: TextInputProps): JSX.Element => {
-  const textInputRef = useRef<TTextInput>(null);
   const [isFocused, setIsFocused] = useState(false);
   const theme = useTheme();
 
@@ -113,7 +111,6 @@ const TextInput = ({
 
   const handleFocus = () => {
     setIsFocused(true);
-    textInputRef.current?.focus();
   };
 
   const handleBlur = () => {
@@ -173,9 +170,9 @@ const TextInput = ({
         {isFocused ? (
           <NativeTextInput
             autoFocus
-            ref={textInputRef}
             onBlur={handleBlur}
             onChange={handleChangeText}
+            onFocus={handleFocus}
             color={inputColor}
             fontFamily={textInputFontFamily}
             {...textInputTextSize}

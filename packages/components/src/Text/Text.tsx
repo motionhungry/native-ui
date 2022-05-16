@@ -1,11 +1,12 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
+import { TextProps as RNTextProps } from 'react-native';
 import { Typography } from '@motionhungry-ui/core';
 import { useTheme } from '@motionhungry-ui/hooks';
 import { TextSize, FontWeight } from '@motionhungry-ui/themes';
 
 type TextProps = {
   color?: string;
-  children: ReactNode;
+  children: RNTextProps['children'];
   fontWeight?: FontWeight;
   size?: TextSize;
   textAlign?: 'left' | 'center' | 'right';
@@ -30,7 +31,6 @@ const Text = ({
       textAlign={textAlign}
       {...theme.components.Text.variant[size]}
     >
-      <Typography />
       {children}
     </Typography>
   );
