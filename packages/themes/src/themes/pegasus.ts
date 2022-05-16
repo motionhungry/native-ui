@@ -38,7 +38,11 @@ const success = {
   light: '#eaf9de',
 };
 
-const secondaryColor = color.miamiLights;
+export const pegasusColors = {
+  grayscale,
+  error,
+  success,
+};
 
 export const pegasusTheme: Theme = {
   ...baseTheme,
@@ -46,7 +50,7 @@ export const pegasusTheme: Theme = {
   color: {
     ...color,
     primary: primaryColor,
-    secondary: secondaryColor,
+    secondary: primaryColor,
   },
   components: {
     ...baseTheme.components,
