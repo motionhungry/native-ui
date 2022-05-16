@@ -3,13 +3,13 @@ import { ThemeProvider } from 'styled-components/native';
 import { useFonts } from 'expo-font';
 
 import { pegasusTheme } from '@motionhungry-ui/themes';
-import { Box, SafeAreaView, Text } from '@motionhungry-ui/components';
+import { SafeAreaView, TextInput } from '@motionhungry-ui/components';
 
 const theme = pegasusTheme;
 
 const Playground = () => (
   <SafeAreaView>
-    <Text size="large">Hello World</Text>
+    <TextInput label="Hello" value="Hi" setValue={() => {}} />
   </SafeAreaView>
 );
 
