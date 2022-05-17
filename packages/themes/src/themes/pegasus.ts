@@ -84,6 +84,10 @@ export const pegasusTheme: Theme = {
         },
       },
     },
+    Card: {
+      ...baseTheme.components.Card,
+      borderColor: grayscale.line,
+    },
     Fab: {
       ...baseTheme.components.Fab,
       backgroundColor: primaryColor[100],
