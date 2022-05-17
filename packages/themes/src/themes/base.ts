@@ -8,6 +8,8 @@ import {
 } from '../base';
 
 import {
+  badgeConfig,
+  BadgeConfig,
   buttonConfig,
   ButtonConfig,
   cardConfig,
@@ -38,6 +40,7 @@ export type Theme = {
   radius: Radius;
   space: Space;
   components: {
+    Badge: BadgeConfig;
     Button: ButtonConfig;
     Card: CardConfig;
     Container: ContainerConfig;
@@ -58,6 +61,7 @@ export const baseTheme: Theme = {
   radius,
   space,
   components: {
+    Badge: badgeConfig,
     Button: buttonConfig,
     Card: cardConfig,
     Container: containerConfig,

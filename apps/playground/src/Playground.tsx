@@ -3,15 +3,16 @@ import { ThemeProvider } from 'styled-components/native';
 import { useFonts } from 'expo-font';
 
 import { pegasusTheme } from '@motionhungry-ui/themes';
-import { Card, SafeAreaView, Text } from '@motionhungry-ui/components';
+import { Badge, Box, SafeAreaView } from '@motionhungry-ui/components';
 
 const theme = pegasusTheme;
 
 const Playground = () => (
   <SafeAreaView>
-    <Card>
-      <Text>Hello</Text>
-    </Card>
+    <Box flexDirection="row">
+      <Box flex={1} />
+      <Badge variant="error" label="Label" />
+    </Box>
   </SafeAreaView>
 );
 
