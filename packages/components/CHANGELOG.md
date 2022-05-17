@@ -1,5 +1,13 @@
 # @motionhungry-ui/components
 
+## 0.0.18
+
+### Patch Changes
+
+- e8543c5: Added badge component
+- Updated dependencies [e8543c5]
+  - @motionhungry-ui/themes@0.0.16
+
 ## 0.0.17
 
 ### Patch Changes

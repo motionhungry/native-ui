@@ -1,5 +1,11 @@
 # @motionhungry-ui/themes
 
+## 0.0.16
+
+### Patch Changes
+
+- e8543c5: Added badge component
+
 ## 0.0.15
 
 ### Patch Changes
