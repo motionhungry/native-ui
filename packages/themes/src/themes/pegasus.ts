@@ -22,6 +22,30 @@ const grayscale = {
   offblack: '#14142b',
 };
 
+const primary = {
+  dark: '#4700ab',
+  default: '#610bef',
+  darkMode: '#a996ff',
+  bg: '#ebecfe',
+  light: '#bfbefc',
+};
+
+const info = {
+  dark: '#0041ac',
+  default: '#005bd4',
+  darkMode: '#50c8fc',
+  bg: '#8de9ff',
+  light: '#e3feff',
+};
+
+const warning = {
+  dark: '#946300',
+  default: '#eaac30',
+  darkMode: '#ffdf9a',
+  bg: '#ffe6b0',
+  light: '#fff8e9',
+};
+
 const error = {
   dark: '#9e0038',
   default: '#ca024f',
@@ -54,6 +78,41 @@ export const pegasusTheme: Theme = {
   },
   components: {
     ...baseTheme.components,
+    Badge: {
+      ...baseTheme.components.Badge,
+      variant: {
+        default: {
+          filledBackgroundColor: grayscale.input,
+          hollowBorderColor: grayscale.input,
+          textColor: grayscale.body,
+        },
+        primary: {
+          filledBackgroundColor: primary.light,
+          hollowBorderColor: primary.light,
+          textColor: primary.dark,
+        },
+        info: {
+          filledBackgroundColor: info.bg,
+          hollowBorderColor: info.bg,
+          textColor: info.dark,
+        },
+        warning: {
+          filledBackgroundColor: warning.bg,
+          hollowBorderColor: warning.bg,
+          textColor: warning.dark,
+        },
+        success: {
+          filledBackgroundColor: success.bg,
+          hollowBorderColor: success.bg,
+          textColor: success.dark,
+        },
+        error: {
+          filledBackgroundColor: error.light,
+          hollowBorderColor: error.light,
+          textColor: error.dark,
+        },
+      },
+    },
     Button: {
       ...baseTheme.components.Button,
       variant: {
