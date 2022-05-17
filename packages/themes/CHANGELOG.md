@@ -1,5 +1,11 @@
 # @motionhungry-ui/themes
 
+## 0.0.15
+
+### Patch Changes
+
+- 39f7d44: Add Card Component
+
 ## 0.0.14
 
 ### Patch Changes
