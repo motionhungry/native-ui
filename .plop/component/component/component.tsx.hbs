@@ -1,6 +1,9 @@
-import { Box, Text } from '@motionhungry-ui/core';
+import React from 'react';
+import { Box } from '@motionhungry-ui/core';
 import { useTheme } from '@motionhungry-ui/hooks';
 import { MarginProps } from 'styled-system';
+
+import { Text } from '../Text';
 
 type {{ name }}Props = {
   someProp: string;
@@ -9,7 +12,7 @@ type {{ name }}Props = {
 const {{ name }} = ({ someProp, ...props }: {{ name }}Props): JSX.Element => {
   const theme = useTheme();
   return (
-    <Box backgroundColor={theme.colors.primary[100]} {...props}>
+    <Box {...props}>
       <Text>{someProp}</Text>
     </Box>
   );
