@@ -1,6 +1,7 @@
 export * from '@motionhungry-ui/core';
 
 export * from './Button';
+export * from './Card';
 export * from './Container';
 export * from './Fab';
 export * from './Heading';

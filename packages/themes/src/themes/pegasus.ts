@@ -38,15 +38,19 @@ const success = {
   light: '#eaf9de',
 };
 
-const secondaryColor = color.miamiLights;
+export const pegasusColors = {
+  grayscale,
+  error,
+  success,
+};
 
 export const pegasusTheme: Theme = {
   ...baseTheme,
-  backgroundColor: grayscale.offwhite,
+  backgroundColor: color.white[100],
   color: {
     ...color,
     primary: primaryColor,
-    secondary: secondaryColor,
+    secondary: primaryColor,
   },
   components: {
     ...baseTheme.components,
@@ -60,12 +64,34 @@ export const pegasusTheme: Theme = {
             backgroundColor: primaryColor[100],
           },
         },
+        secondary: {
+          ...baseTheme.components.Button.variant.secondary,
+          box: {
+            ...baseTheme.components.Button.variant.secondary.box,
+            borderColor: primaryColor[100],
+          },
+          label: {
+            ...baseTheme.components.Button.variant.secondary.label,
+            color: primaryColor[100],
+          },
+        },
+        tertiary: {
+          ...baseTheme.components.Button.variant.tertiary,
+          label: {
+            ...baseTheme.components.Button.variant.tertiary.label,
+            color: primaryColor[100],
+          },
+        },
       },
+    },
+    Card: {
+      ...baseTheme.components.Card,
+      borderColor: grayscale.line,
     },
     Fab: {
       ...baseTheme.components.Fab,
       backgroundColor: primaryColor[100],
-      iconColor: grayscale.offwhite,
+      iconColor: color.white[100],
       shadowColor: `${grayscale.offblack}25`,
     },
     Input: {
@@ -82,7 +108,7 @@ export const pegasusTheme: Theme = {
         },
         active: {
           box: {
-            backgroundColor: grayscale.offwhite,
+            backgroundColor: color.white[100],
             borderColor: grayscale.offblack,
             borderWidth: '2px',
           },
