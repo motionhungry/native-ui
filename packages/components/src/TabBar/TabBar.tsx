@@ -6,29 +6,23 @@ import { radius } from '@motionhungry-ui/themes';
 import { Fab } from '../Fab';
 import { FabMask, TabButton } from './components';
 
-export type TabIndex = 0 | 1 | 2 | 3 | 4;
-
-export type TabBarIconNames = [
-  IconName,
-  IconName,
-  IconName,
-  IconName,
-  IconName
-];
-
-type TabBarProps = {
-  activeIndex: TabIndex;
-  icons: TabBarIconNames;
-  onTabPress: (index: TabIndex) => void;
-  variant: 'default' | 'fab';
+export type TabBarButtonConfig = {
+  icon: IconName;
+  onPress: () => void;
 };
 
-const TabBar = ({
-  activeIndex,
-  icons,
-  onTabPress,
-  variant,
-}: TabBarProps): JSX.Element => {
+export type TabBarFabConfig = {
+  icon: IconName;
+  onPress: () => void;
+};
+
+type TabBarProps = {
+  activeIndex: number;
+  buttons: TabBarButtonConfig[];
+  fab?: TabBarFabConfig;
+};
+
+const TabBar = ({ activeIndex, buttons, fab }: TabBarProps): JSX.Element => {
   const theme = useTheme();
   const {
     components: { TabBar: tabBarTheme },
@@ -36,7 +30,10 @@ const TabBar = ({
 
   const borderRadius = radius[tabBarTheme.box.borderRadius];
 
-  if (variant === 'fab') {
+  if (fab) {
+    const half = Math.ceil(buttons.length / 2);
+    const leftButtons = buttons.slice(0, half);
+    const rightButtons = buttons.slice(half);
     return (
       <Box flexDirection="row">
         <Box
@@ -45,24 +42,19 @@ const TabBar = ({
           borderTopRightRadius={borderRadius}
           flex={1}
           flexDirection="row"
-          justifyContent="space-between"
+          justifyItems="center"
+          justifyContent="space-around"
           padding={2}
           marginTop={20}
         >
-          <TabButton
-            active={activeIndex === 0}
-            icon={icons[0]}
-            onPress={() => {
-              onTabPress(0);
-            }}
-          />
-          <TabButton
-            active={activeIndex === 1}
-            icon={icons[1]}
-            onPress={() => {
-              onTabPress(1);
-            }}
-          />
+          {leftButtons.map((button, index) => (
+            <TabButton
+              key={`tab-leftButtons-${index}`}
+              active={activeIndex === index}
+              icon={button.icon}
+              onPress={button.onPress}
+            />
+          ))}
         </Box>
         <Box
           position="relative"
@@ -73,7 +65,7 @@ const TabBar = ({
         >
           <FabMask color={tabBarTheme.box.backgroundColor} />
           <Box position="absolute" bottom={30}>
-            <Fab icon={icons[2]} onPress={() => onTabPress(2)} />
+            <Fab icon={fab.icon} onPress={fab.onPress} />
           </Box>
         </Box>
         <Box
@@ -82,24 +74,18 @@ const TabBar = ({
           borderTopRightRadius={borderRadius}
           flex={1}
           flexDirection="row"
-          justifyContent="space-between"
+          justifyContent="space-around"
           padding={2}
           marginTop={20}
         >
-          <TabButton
-            active={activeIndex === 3}
-            icon={icons[3]}
-            onPress={() => {
-              onTabPress(3);
-            }}
-          />
-          <TabButton
-            active={activeIndex === 4}
-            icon={icons[4]}
-            onPress={() => {
-              onTabPress(4);
-            }}
-          />
+          {rightButtons.map((button, index) => (
+            <TabButton
+              key={`tab-rightButtons-${index}`}
+              active={activeIndex === half + index}
+              icon={button.icon}
+              onPress={button.onPress}
+            />
+          ))}
         </Box>
       </Box>
     );
@@ -110,22 +96,19 @@ const TabBar = ({
       backgroundColor={tabBarTheme.box.backgroundColor}
       borderTopLeftRadius={radius[tabBarTheme.box.borderRadius]}
       borderTopRightRadius={radius[tabBarTheme.box.borderRadius]}
-      justifyContent="space-between"
+      justifyContent="space-around"
       flexDirection="row"
+      alignItems="center"
       padding={2}
     >
-      {icons.map((icon, index) => {
-        return (
-          <TabButton
-            key={`tab-button-${index}`}
-            active={activeIndex === index}
-            icon={icon}
-            onPress={() => {
-              onTabPress(index as TabIndex);
-            }}
-          />
-        );
-      })}
+      {buttons.map((button, index) => (
+        <TabButton
+          key={`tab-button-${index}`}
+          active={activeIndex === index}
+          icon={button.icon}
+          onPress={button.onPress}
+        />
+      ))}
     </Box>
   );
 };

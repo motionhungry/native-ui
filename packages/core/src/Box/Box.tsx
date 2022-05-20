@@ -3,6 +3,7 @@ import {
   border,
   boxShadow,
   color,
+  display,
   flexbox,
   layout,
   position,
@@ -12,6 +13,7 @@ import type {
   BorderProps,
   BoxShadowProps,
   ColorProps,
+  DisplayProps,
   FlexboxProps,
   LayoutProps,
   PositionProps,
@@ -21,6 +23,7 @@ import type {
 export type BoxProps = BorderProps &
   BoxShadowProps &
   ColorProps &
+  DisplayProps &
   PositionProps &
   FlexboxProps &
   LayoutProps &
@@ -30,6 +33,7 @@ export const boxStyles = css`
   ${border}
   ${boxShadow}
   ${color}
+  ${display}
   ${position}
   ${flexbox}
   ${layout}
