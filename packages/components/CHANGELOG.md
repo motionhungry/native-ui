@@ -1,5 +1,14 @@
 # @motionhungry-ui/components
 
+## 0.0.19
+
+### Patch Changes
+
+- d6f3c24: added a custom tab navigator
+- Updated dependencies [d6f3c24]
+  - @motionhungry-ui/core@0.0.9
+  - @motionhungry-ui/themes@0.0.17
+
 ## 0.0.18
 
 ### Patch Changes
