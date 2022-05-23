@@ -2,7 +2,6 @@ import React from 'react';
 import { Box, Title } from '@motionhungry-ui/components';
 import { useTheme } from '@motionhungry-ui/hooks';
 import { ParamListBase, TabNavigationState } from '@react-navigation/native';
-// import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { TabDescriptorMap } from '../types';
 
@@ -26,7 +25,7 @@ export const ContentView = ({ state, descriptors }: ContentViewProps) => {
           >
             {options.showTitle && (
               <Title
-                size={options.titleSize}
+                size={options.titleSize ?? 'large'}
                 title={options.title ?? route.name}
               />
             )}

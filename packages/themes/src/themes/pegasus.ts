@@ -227,7 +227,7 @@ export const pegasusTheme: Theme = {
       ...baseTheme.components.TabBar,
       box: {
         ...baseTheme.components.TabBar.box,
-        backgroundColor: grayscale.bg,
+        backgroundColor: grayscale.input,
       },
       tabState: {
         active: {
@@ -248,7 +248,7 @@ export const pegasusTheme: Theme = {
         ...baseTheme.components.Title.large,
         box: {
           ...baseTheme.components.Title.large.box,
-          backgroundColor: grayscale.bg,
+          backgroundColor: grayscale.input,
         },
         label: {
           ...baseTheme.components.Title.large.label,

@@ -18,11 +18,10 @@ type FabTabNavigationConfig = {
 };
 
 export type TabNavigationOptions = {
-  icon: IconName;
-  showSafeArea: boolean;
-  showTitle: boolean;
+  icon?: IconName;
+  showTitle?: boolean;
   title?: string;
-  titleSize: TitleSize;
+  titleSize?: TitleSize;
 };
 
 export type TabNavigationEventMap = {
