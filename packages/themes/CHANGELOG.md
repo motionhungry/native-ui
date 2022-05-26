@@ -1,5 +1,12 @@
 # @motionhungry-ui/themes
 
+## 0.0.18
+
+### Patch Changes
+
+- c1e14e4: Add ProgressBar component
+- c1e14e4: Refactor color palette themes
+
 ## 0.0.17
 
 ### Patch Changes
