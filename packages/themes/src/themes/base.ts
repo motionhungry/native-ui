@@ -1,6 +1,6 @@
 import {
-  color,
-  Color,
+  palette,
+  Palette,
   radius,
   Radius,
   space,
@@ -24,6 +24,8 @@ import {
   IconButtonConfig,
   listItemConfig,
   ListItemConfig,
+  progressBarConfig,
+  ProgressBarConfig,
   TabBarConfig,
   tabBarConfig,
   textConfig,
@@ -36,7 +38,7 @@ import {
 
 export type Theme = {
   backgroundColor: string;
-  color: Color;
+  palette: Palette;
   radius: Radius;
   space: Space;
   components: {
@@ -48,6 +50,7 @@ export type Theme = {
     Heading: Heading;
     IconButton: IconButtonConfig;
     ListItem: ListItemConfig;
+    ProgressBar: ProgressBarConfig;
     TabBar: TabBarConfig;
     Text: TextConfig;
     Title: TitleConfig;
@@ -56,8 +59,8 @@ export type Theme = {
 };
 
 export const baseTheme: Theme = {
-  backgroundColor: color.white[100],
-  color,
+  backgroundColor: palette.white,
+  palette,
   radius,
   space,
   components: {
@@ -69,6 +72,7 @@ export const baseTheme: Theme = {
     Heading: heading,
     IconButton: iconButtonConfig,
     ListItem: listItemConfig,
+    ProgressBar: progressBarConfig,
     TabBar: tabBarConfig,
     Text: textConfig,
     Title: titleConfig,

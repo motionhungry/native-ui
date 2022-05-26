@@ -1,4 +1,4 @@
-import { color } from '../base/color';
+import { palette } from '../base/color';
 import { radius } from '../base/radius';
 
 export type IconButtonSize = 'xlarge' | 'large' | 'medium' | 'small';
@@ -66,20 +66,20 @@ export const iconButtonConfig: IconButtonConfig = {
   variant: {
     primary: {
       box: {
-        backgroundColor: color.black[100],
+        backgroundColor: palette.primary[500],
       },
-      iconColor: color.white[100],
+      iconColor: palette.white,
     },
     secondary: {
       box: {
         borderWidth: '2px',
-        borderColor: color.black[100],
+        borderColor: palette.primary[500],
       },
-      iconColor: color.black[100],
+      iconColor: palette.primary[500],
     },
     tertiary: {
       box: {},
-      iconColor: color.black[100],
+      iconColor: palette.primary[500],
     },
   },
 };

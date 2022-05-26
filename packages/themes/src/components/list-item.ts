@@ -1,5 +1,5 @@
 import { TextSize } from './text';
-import { color } from '../base';
+import { palette } from '../base';
 import { SpaceVariant } from '../base/space';
 
 type ListItemState = 'default' | 'selected';
@@ -35,15 +35,15 @@ export const listItemConfig: ListItemConfig = {
     default: {
       box: {},
       icon: {
-        color: color.shale[50],
+        color: palette.primary[500],
       },
     },
     selected: {
       box: {
-        backgroundColor: color.shale[25],
+        backgroundColor: palette.primary[100],
       },
       icon: {
-        color: color.shale[50],
+        color: palette.primary[500],
       },
     },
   },

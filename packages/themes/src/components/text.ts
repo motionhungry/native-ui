@@ -1,4 +1,4 @@
-import { color } from '../base/color';
+import { palette } from '../base/color';
 
 export type TextSize = 'large' | 'medium' | 'small' | 'xsmall';
 
@@ -46,5 +46,5 @@ export const textConfig: TextConfig = {
     'semi-bold': 'Poppins-SemiBold',
     bold: 'Poppins-Bold',
   },
-  defaultColor: color.black[100],
+  defaultColor: palette.grayscale[900],
 };

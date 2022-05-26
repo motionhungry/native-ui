@@ -1,7 +1,7 @@
 import { TextSize } from './text';
 import { HeadingSize } from './heading';
 import { SpaceVariant } from '../base/space';
-import { color } from 'base';
+import { palette } from 'base';
 
 export type TitleSize = 'large' | 'medium' | 'small';
 
@@ -31,7 +31,7 @@ export type TitleConfig = Record<TitleSize, TitleSizeConfig>;
 export const titleConfig: TitleConfig = {
   large: {
     box: {
-      backgroundColor: color.concrete[100],
+      backgroundColor: palette.grayscale[200],
       paddingTop: 4,
       paddingBottom: 2.5,
       paddingX: 3,
@@ -40,17 +40,17 @@ export const titleConfig: TitleConfig = {
       size: 'xlarge',
     },
     icon: {
-      color: color.black[100],
+      color: palette.primary[500],
       size: 24,
     },
     label: {
-      color: color.black[100],
+      color: palette.grayscale[900],
       size: 'medium',
     },
   },
   medium: {
     box: {
-      backgroundColor: color.concrete[100],
+      backgroundColor: palette.grayscale[200],
       paddingTop: 3,
       paddingBottom: 2.5,
       paddingX: 3,
@@ -59,11 +59,11 @@ export const titleConfig: TitleConfig = {
       size: 'large',
     },
     icon: {
-      color: color.black[100],
+      color: palette.primary[500],
       size: 24,
     },
     label: {
-      color: color.black[100],
+      color: palette.grayscale[900],
       size: 'medium',
     },
   },
@@ -78,11 +78,11 @@ export const titleConfig: TitleConfig = {
       textAlign: 'center',
     },
     icon: {
-      color: color.black[100],
+      color: palette.primary[500],
       size: 24,
     },
     label: {
-      color: color.black[100],
+      color: palette.grayscale[900],
       size: 'medium',
     },
   },
