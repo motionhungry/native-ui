@@ -1,8 +1,4 @@
-import { ColorOpacity, color } from '../base/color';
-
-export type FabColorOption = 'primary' | 'secondary';
-
-export type FabColor = Record<FabColorOption, ColorOpacity>;
+import { palette } from '../base/color';
 
 export type Fab = {
   backgroundColor: string;
@@ -11,7 +7,7 @@ export type Fab = {
 };
 
 export const fab: Fab = {
-  backgroundColor: 'secondary',
-  iconColor: color.white[100],
-  shadowColor: color.indigoBlack[25],
+  backgroundColor: palette.primary[500],
+  iconColor: palette.white,
+  shadowColor: palette.primary[200],
 };

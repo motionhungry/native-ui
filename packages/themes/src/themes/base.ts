@@ -1,6 +1,6 @@
 import {
-  color,
-  Color,
+  palette,
+  Palette,
   radius,
   Radius,
   space,
@@ -38,7 +38,7 @@ import {
 
 export type Theme = {
   backgroundColor: string;
-  color: Color;
+  palette: Palette;
   radius: Radius;
   space: Space;
   components: {
@@ -59,8 +59,8 @@ export type Theme = {
 };
 
 export const baseTheme: Theme = {
-  backgroundColor: color.white[100],
-  color,
+  backgroundColor: palette.white,
+  palette,
   radius,
   space,
   components: {

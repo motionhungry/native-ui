@@ -1,4 +1,4 @@
-import { color } from '../base/color';
+import { palette } from '../base/color';
 import { SpaceVariant } from '../base/space';
 import { BorderRadiusVariant } from '../base/radius';
 
@@ -13,6 +13,6 @@ export type CardConfig = {
 export const cardConfig: CardConfig = {
   padding: 2,
   borderRadiusVariant: 'medium',
-  borderColor: color.black[100],
+  borderColor: palette.grayscale[300],
   borderWidth: '1px',
 };

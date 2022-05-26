@@ -1,4 +1,4 @@
-import { color } from '../base/color';
+import { palette } from '../base/color';
 import { radius } from '../base/radius';
 import { textConfig, FontSizeVariant } from './text';
 
@@ -74,25 +74,25 @@ export const buttonConfig = {
   variant: {
     primary: {
       box: {
-        backgroundColor: color.black[100],
+        backgroundColor: palette.primary[500],
       },
       label: {
-        color: color.white[100],
+        color: palette.white,
       },
     },
     secondary: {
       box: {
         borderWidth: '2px',
-        borderColor: color.black[100],
+        borderColor: palette.primary[500],
       },
       label: {
-        color: color.black[100],
+        color: palette.primary[500],
       },
     },
     tertiary: {
       box: {},
       label: {
-        color: color.black[100],
+        color: palette.primary[500],
       },
     },
   },

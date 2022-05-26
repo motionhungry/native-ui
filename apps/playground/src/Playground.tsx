@@ -4,8 +4,8 @@ import { useFonts } from 'expo-font';
 
 import { useTheme } from '@motionhungry-ui/hooks';
 import { createFabTabBarNavigator } from '@motionhungry-ui/navigators';
-import { pegasusTheme } from '@motionhungry-ui/themes';
-import { Box, Text, Title } from '@motionhungry-ui/components';
+import { pegasusTheme, defaultTheme } from '@motionhungry-ui/themes';
+import { Box, Text, Title, ProgressBar } from '@motionhungry-ui/components';
 import { getHeaderTitle } from '@react-navigation/elements';
 import { NavigationContainer } from '@react-navigation/native';
 import {
@@ -16,11 +16,14 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 const theme = pegasusTheme;
 
-const HomeScreen = () => (
-  <Box flexGrow={1} alignItems="center" justifyContent="center">
-    <Text>Home Screen</Text>
-  </Box>
-);
+const HomeScreen = () => {
+  const theme = useTheme();
+  return (
+    <Box flexGrow={1} alignItems="center" justifyContent="center">
+      <ProgressBar progress={75} />
+    </Box>
+  );
+}
 
 const OtherScreen = () => {
   const theme = useTheme();

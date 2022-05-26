@@ -1,4 +1,4 @@
-import { color } from '../base/color';
+import { palette } from '../base/color';
 import { FontWeight, TextSize } from './text';
 import { SpaceVariant } from '../base/space';
 import { BorderRadiusVariant } from '../base/radius';
@@ -42,34 +42,34 @@ export const badgeConfig: BadgeConfig = {
   fontWeight: 'medium',
   variant: {
     default: {
-      filledBackgroundColor: color.shale[25],
-      hollowBorderColor: color.shale[25],
-      textColor: color.shale[100],
+      filledBackgroundColor: palette.grayscale[300],
+      hollowBorderColor: palette.grayscale[300],
+      textColor: palette.grayscale[900],
     },
     primary: {
-      filledBackgroundColor: color.shale[25],
-      hollowBorderColor: color.shale[25],
-      textColor: color.shale[100],
+      filledBackgroundColor: palette.primary[300],
+      hollowBorderColor: palette.primary[300],
+      textColor: palette.primary[900],
     },
     info: {
-      filledBackgroundColor: color.shale[25],
-      hollowBorderColor: color.shale[25],
-      textColor: color.shale[100],
+      filledBackgroundColor: palette.secondary[300],
+      hollowBorderColor: palette.secondary[300],
+      textColor: palette.secondary[900],
     },
     warning: {
-      filledBackgroundColor: color.shale[25],
-      hollowBorderColor: color.shale[25],
-      textColor: color.shale[100],
+      filledBackgroundColor: palette.warning[300],
+      hollowBorderColor: palette.warning[300],
+      textColor: palette.warning[900],
     },
     success: {
-      filledBackgroundColor: color.shale[25],
-      hollowBorderColor: color.shale[25],
-      textColor: color.shale[100],
+      filledBackgroundColor: palette.success[300],
+      hollowBorderColor: palette.success[300],
+      textColor: palette.success[900],
     },
     error: {
-      filledBackgroundColor: color.shale[25],
-      hollowBorderColor: color.shale[25],
-      textColor: color.shale[100],
+      filledBackgroundColor: palette.danger[300],
+      hollowBorderColor: palette.danger[300],
+      textColor: palette.success[900],
     },
   },
 };

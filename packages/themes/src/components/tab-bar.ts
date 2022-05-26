@@ -1,4 +1,4 @@
-import { color } from '../base';
+import { palette } from '../base';
 import { BorderRadiusVariant } from '../base/radius';
 import { SpaceVariant } from '../base/space';
 
@@ -21,17 +21,17 @@ export type TabBarConfig = {
 
 export const tabBarConfig: TabBarConfig = {
   box: {
-    backgroundColor: color.shale[25],
+    backgroundColor: palette.grayscale[200],
     borderRadius: 'xlarge',
   },
   iconSize: 32,
   iconPadding: 1,
   tabState: {
     active: {
-      iconColor: color.black[100],
+      iconColor: palette.primary[900],
     },
     inactive: {
-      iconColor: color.shale[100],
+      iconColor: palette.grayscale[500],
     },
   },
 };

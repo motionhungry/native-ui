@@ -1,4 +1,4 @@
-import { color } from '../base/color';
+import { palette } from '../base/color';
 import { radius } from '../base/radius';
 import { FontWeight, TextSize } from './text';
 
@@ -90,48 +90,48 @@ export const inputConfig: InputConfig = {
   state: {
     inactive: {
       box: {
-        backgroundColor: color.concrete[100],
-        borderColor: color.concrete[100],
+        backgroundColor: palette.grayscale[200],
+        borderColor: palette.grayscale[200],
         borderWidth: '2px',
       },
-      labelColor: color.shale[100],
-      inputColor: color.black[100],
+      labelColor: palette.grayscale[500],
+      inputColor: palette.grayscale[900],
     },
     active: {
       box: {
-        backgroundColor: color.white[100],
-        borderColor: color.black[100],
+        backgroundColor: palette.white,
+        borderColor: palette.black[900],
         borderWidth: '2px',
       },
-      labelColor: color.shale[100],
-      inputColor: color.black[100],
+      labelColor: palette.grayscale[500],
+      inputColor: palette.grayscale[900],
     },
     disabled: {
       box: {
-        backgroundColor: color.shale[25],
-        borderColor: color.shale[100],
+        backgroundColor: palette.grayscale[100],
+        borderColor: palette.grayscale[100],
         borderWidth: '2px',
       },
-      labelColor: color.shale[75],
-      inputColor: color.shale[100],
+      labelColor: palette.grayscale[300],
+      inputColor: palette.grayscale[300],
     },
     error: {
       box: {
-        backgroundColor: color.sangre[25],
-        borderColor: color.sangre[100],
+        backgroundColor: palette.danger[100],
+        borderColor: palette.danger[900],
         borderWidth: '2px',
       },
-      labelColor: color.sangre[100],
-      inputColor: color.black[100],
+      labelColor: palette.danger[900],
+      inputColor: palette.grayscale[900],
     },
     success: {
       box: {
-        backgroundColor: color.highlander[25],
-        borderColor: color.highlander[100],
+        backgroundColor: palette.success[100],
+        borderColor: palette.success[900],
         borderWidth: '2px',
       },
-      labelColor: color.highlander[100],
-      inputColor: color.black[100],
+      labelColor: palette.success[900],
+      inputColor: palette.grayscale[900],
     },
   },
 };

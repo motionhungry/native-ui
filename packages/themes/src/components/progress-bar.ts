@@ -1,4 +1,4 @@
-import { color } from '../base/color';
+import { palette } from '../base/color';
 
 export type ProgressBarConfig = {
   height: string;
@@ -10,6 +10,6 @@ export type ProgressBarConfig = {
 export const progressBarConfig: ProgressBarConfig = {
   height: '12px',
   rounded: true,
-  backgroundColor: color.shale[25],
-  progressColor: color.black[100],
+  backgroundColor: palette.grayscale[100],
+  progressColor: palette.primary[500],
 };
