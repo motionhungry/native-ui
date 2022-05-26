@@ -7,6 +7,7 @@ export * from './heading';
 export * from './icon-button';
 export * from './input';
 export * from './list-item';
+export * from './progress-bar';
 export * from './tab-bar';
 export * from './text';
 export * from './title';

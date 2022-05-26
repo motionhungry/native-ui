@@ -24,6 +24,8 @@ import {
   IconButtonConfig,
   listItemConfig,
   ListItemConfig,
+  progressBarConfig,
+  ProgressBarConfig,
   TabBarConfig,
   tabBarConfig,
   textConfig,
@@ -48,6 +50,7 @@ export type Theme = {
     Heading: Heading;
     IconButton: IconButtonConfig;
     ListItem: ListItemConfig;
+    ProgressBar: ProgressBarConfig;
     TabBar: TabBarConfig;
     Text: TextConfig;
     Title: TitleConfig;
@@ -69,6 +72,7 @@ export const baseTheme: Theme = {
     Heading: heading,
     IconButton: iconButtonConfig,
     ListItem: listItemConfig,
+    ProgressBar: progressBarConfig,
     TabBar: tabBarConfig,
     Text: textConfig,
     Title: titleConfig,

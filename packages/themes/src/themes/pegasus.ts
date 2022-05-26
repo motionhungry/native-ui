@@ -223,6 +223,11 @@ export const pegasusTheme: Theme = {
         },
       },
     },
+    ProgressBar: {
+      ...baseTheme.components.ProgressBar,
+      backgroundColor: grayscale.input,
+      progressColor: primary.default,
+    },
     TabBar: {
       ...baseTheme.components.TabBar,
       box: {
