@@ -22,8 +22,9 @@
   },
   "dependencies": {
     "@motionhungry-ui/themes": "*",
-    "react": "17.0.1",
-    "styled-components": "^5.3.3"
+    "react": "18.0.0",
+    "styled-components": "^6.0.0",
+    "stylis": "^4.0.0"
   },
   "publishConfig": {
     "access": "public"
