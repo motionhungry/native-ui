@@ -1,6 +1,6 @@
 {
   "name": "playground",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "main": "index.ts",
   "scripts": {
     "clean": "yarn run rimraf node_modules",

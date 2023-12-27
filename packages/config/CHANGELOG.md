@@ -1,5 +1,12 @@
 # @motionhungry-ui/config
 
+## 0.1.0
+
+### Minor Changes
+
+- 6e9764b: fix engine
+- d333dee: fix engines
+
 ## 0.0.5
 
 ### Patch Changes
