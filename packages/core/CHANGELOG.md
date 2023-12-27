@@ -1,5 +1,13 @@
 # @motionhungry-ui/core
 
+## 0.1.0
+
+### Minor Changes
+
+- 6e9764b: fix engine
+- 62379ea: Upgrade Expo version
+- d333dee: fix engines
+
 ## 0.0.9
 
 ### Patch Changes

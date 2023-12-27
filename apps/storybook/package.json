@@ -1,6 +1,6 @@
 {
   "name": "@motionhungry-ui/storybook",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "main": "index.ts",
   "scripts": {
     "clean": "yarn run rimraf node_modules",
